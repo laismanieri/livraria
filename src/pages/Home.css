@@ -1,12 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
-
 
 *{
     list-style: none;
     text-decoration: none;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
 
 }
+
+.header ul{
+    background: #005782;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    z-index: 1;
+    padding: 2px;      
+    box-shadow: 2px 5px 8px #454849;
+}
+
+.header ul li{
+    display: inline-block;
+    
+
+}
+
+
+.header ul .usuario{
+    margin: 1.2% 2% 0 10%;
+    
+    
+ 
+ }
+
+ .header ul .cesta{
+    margin: 1.2% 10% 0 1%;
+ 
+ }
+
+ .header ul .busca{
+    margin: 1.2% 0 0 10%;
+ 
+ }
+
+.header ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+
+
+}
+
+.header ul li .div-busca{
+    display: block;
+    text-decoration: none;
+    color: #def4f8;
+    margin: 0;
+    border:solid 1px;
+    border-radius:10px;
+    width:500px; 
+    height: 35px;
+
+}
+
+.header ul li .div-busca img{
+    margin-top: 5px;
+}
+
+.input{
+  font-size: inherit;
+  outline: 0;
+  box-shadow: none;
+  border: 0 none;
+  width: 90%;
+  background-color: #005782;
+  margin-bottom:10px;
+}
+
+::-webkit-input-placeholder{
+    color:#def4f8;
+
+}
+
+
 
 .tela{
     display: flex;
@@ -15,6 +95,8 @@
     font-family: 'Dancing Script', cursive;
     background: linear-gradient(to top, #efefef, 
     #efefef);
+    margin-top: 4%;
+    font-size: x-small;
 }
 
 .tela .ul{
@@ -24,34 +106,37 @@
 
 .tela .ul .li{
     margin-bottom: 15%;
-
-    
+  
 }
 
-.tela .ul .li img{
-    width: 18%;
-    margin-right: 3%;
-}
 
 .tela .ul .li h2{
     margin-bottom: 0%;
+    text-decoration: none;
+    color: #def4f8;
+    
     
 }
 
+
 .menu-lateral-closed{
-    width: 7%;
-    background-color: #ffffff;
- 
+    width: 0;
+    background-color: #005782;
+    margin: 1% 7% 0 3%;
 }
 
 .menu-lateral-open{
-    width: 17%;
-    background-color: #ffffff;
+    width: 16%;
+    height: 100%;
+    background-color: #005782;
+    text-align: left;
+
 }
 
 
 .display{
     width: 100%;
+
 }
 
 .display h1{
@@ -59,53 +144,58 @@
 }
 
 
-.ul a{
-    text-decoration: none;
-    color: black;
-    font-size: small;
-}
 
 .arrow{
     border: none;
-    margin-top: 9%;
-    background-color: #ffffff;
-}
-
-.menu-lateral-closed .arrow{
-    margin-top: 19%;
-}
-
-.menu-lateral-closed .ul .li-usuario img
-{
-    width: 70%;
-    margin-right: 60%;
-    margin-top: 70%;
-    margin-left: 0%;
-}
-
-.menu-lateral-closed .ul .li {
-    font-size: large;
-    margin-right: 30px;
-    margin-top: 45%;
-}
-
-.menu-lateral-closed .ul .li img {
-    width: 70%;
+    margin-top:11.5%;
+    background-color: #005782;
+    margin-left: 40%;
+    
 }
 
 
-.menu-lateral-closed .ul .li h2
-{
-    font-size: large;
-    margin-right: 1%;
 
+footer {
+    padding: 2%;
+    background-color: #004e75;
+    font-size: 14px;
+    color: #def4f8;
 }
 
-.menu-lateral-closed .ul .li .sair{
-    margin-right: 1%;
-    margin-top: 3%;
+/* .linha {
+    margin: 1em 0;
+    border-top: 1px solid #badcee;
+
+} */
+
+.div-images{
+    display: flex;
 }
 
+
+.div-images img{
+    margin: 10%;    
+    width: 80%;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 4%;
+    border-radius: 2px;
+    margin-top: 10%;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 10px;
+  }
 
 
 
