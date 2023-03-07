@@ -1,25 +1,25 @@
-//Bibliotecas
-import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Home from './components/pages/Home'
+import Container from './components/layout/Container';
+import NavBar from './components/layout/NavBar';
+import Footer from './components/layout/Footer';
 
-// Estilo
-import './App.css';
-import Inicial from './pages/Inicial';
 
-
-import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route element = {<Home/>} path='/' exact>
-              <Route element = {<Inicial/>} path='/'/>
-            </Route>
-          </Routes>
-        </BrowserRouter>
-  
-    </div>
+    <>
+    <Router>
+      <NavBar/>
+      <Switch>
+        <Container customClass="min-height">
+        <Home/>
+        </Container>  
+        </Switch>
+        <Footer/>
+    </Router>
+
+    </>
   );
 }
 

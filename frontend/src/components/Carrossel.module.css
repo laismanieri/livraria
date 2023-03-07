@@ -1,0 +1,69 @@
+
+.container {
+
+    padding: 15px;
+    max-width: 1440px;
+    margin: auto;
+  }
+  
+  .gallery-wrapper {
+    overflow-x: auto;
+  }
+  
+  .arrow-left,
+  .arrow-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 250px;
+    width: 40px;
+    color:#46bbf6;
+    transition: all 50ms ease-in-out;
+    background: transparent;
+    opacity: 0.1;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .arrow-left:hover,
+  .arrow-right:hover {
+    opacity: 2;
+  }
+  
+  .arrow-right {
+    right: 0;
+    left: auto;
+    text-align: right;
+    background: transparent;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .item {
+    width: 1410px;
+    height: 300px;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+    opacity: 0.5;
+  }
+  
+  .current-item {
+    opacity: 1;
+  }
+
+  .gallery-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .gallery-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  
