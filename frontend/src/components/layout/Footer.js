@@ -5,7 +5,7 @@ import styles from './Footer.module.css'
 function Footer() {
     return(
         <footer className={styles.footer}>
-            <a href="#faleConosco"><h1>Fale Conosco</h1></a>
+            <a className={styles.faleConosco} href="#faleConosco"><h1>Fale Conosco</h1></a>
             
             <ul className={styles.socialList}>
                 <li>

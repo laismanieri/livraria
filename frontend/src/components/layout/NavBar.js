@@ -24,7 +24,7 @@ function NavBar() {
                             <li>
                                 <h1>Boas-vindas!</h1>
                             </li>
-                            <li>
+                            <li className={styles.loginAcesso}>
                                 <a href="#login">Entre ou cadastre-se</a>
                             </li>
                         </div>

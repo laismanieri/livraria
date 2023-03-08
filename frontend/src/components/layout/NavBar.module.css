@@ -7,7 +7,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    background:  #1dafef;
+    background:  #033579;
     padding: 1em;
     position: -webkit-sticky; 
     position: sticky;
@@ -65,13 +65,12 @@
 .login{
     padding: 0 10px;
     display: block;
-    color: #015a80;
     text-decoration: none;
 }
 
 .login h1, a{
     font-size: 14px;
-    color: #015a80;
+    color: #ffffff;
     text-decoration: none;
 
 }
@@ -81,4 +80,8 @@
     font-weight: bolder;
 }
 
+
+.loginAcesso :hover{
+    color:rgb(144, 202, 252);
+}
 
