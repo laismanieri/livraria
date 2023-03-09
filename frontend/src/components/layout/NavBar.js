@@ -1,22 +1,24 @@
-import {Link} from 'react-router-dom'
-import Container from './Container';
-import styles from './NavBar.module.css'
 
+import Container from "./Container";
+import {Link, NavLink} from 'react-router-dom';
+import  styles from "../layout/NavBar.module.css";
 
 function NavBar() {
     return(
-        <nav className={styles.navbar}>
+      <nav className={styles.navbar}>
             <Container>
               
-            <a href="#home">
+            <Link to='/'>
                 <img src='./img/logo.png'alt="logo"/>
-            </a>
+            </Link>
                 <ul className={styles.list}>                            
-                    <li className={styles.search}>
+                <li className={styles.search}>
                         <input type="search" placeholder="O que você quer ler?"/> 
-                        <img className="icon" aria-label="Menu" id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
-                    </li>
-                    <div className={styles.loginUser}>
+                        <NavLink to='/pesquisa' >
+                            <img  id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
+                        </NavLink>
+                    </li> 
+                    <div className={styles.loginUser}>   
                         <li>                    
                             <img title="Login" src="./img/perfil-de-usuario.png" alt="ícone de usuario"/>
                          </li>
@@ -24,8 +26,10 @@ function NavBar() {
                             <li>
                                 <h1>Boas-vindas!</h1>
                             </li>
-                            <li className={styles.loginAcesso}>
-                                <a href="#login">Entre ou cadastre-se</a>
+                            <li>
+                            <Link to="/login" className={styles.loginAcesso}>
+                              <h1>Entre ou cadastre-se</h1>
+                            </Link>
                             </li>
                         </div>
                     </div>
@@ -35,7 +39,6 @@ function NavBar() {
                                 <img src="./img/compra.png" alt="ícone sacola" />
                         </Link>
                     </li >
-
                 </ul>
             </Container>
         </nav>

@@ -5,7 +5,6 @@ function Card(){
     return(
 
 <div className={styles.divCard}>
-        <h4 className={styles.titulo}>Destaques</h4>
         <div className={styles.row}> 
          
             <div className={styles.card}>

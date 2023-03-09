@@ -1,7 +1,9 @@
-function Contact(){
-    return (
-        <h1>Contato</h1>
+function Contact() {
+    return(
+        <nav>
+            <p>Fale Conosco</p>
+        </nav>
     )
 }
 
-export default Contact;
+export default Contact
