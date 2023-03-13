@@ -13,7 +13,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element = {<Home/>} path='/' exact>
-
           </Route>
           <Route element = {<Login/>} path='/login'/>
           <Route element = {<Carrinho/>} path='/carrinho'/>

@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.senai.sp.livro.dao.LivrosDAO;
+import br.senai.sp.livro.dao.LivroDAO;
 import br.senai.sp.livro.model.Livro;
 
 @RestController
-@RequestMapping("/livros")
-public class LivrosController {
+@RequestMapping("/livro")
+public class LivroController {
 
 	@Autowired
-	LivrosDAO dao;
+	LivroDAO dao;
 
 	@GetMapping
 	public List<Livro> listarTodos() {
 		return dao.listarTodos();
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/{idLivro}")
 	public Livro PegarPorId(@PathVariable int idLivro) {
 		return dao.PegarPorId(idLivro);
 	}
@@ -38,13 +38,13 @@ public class LivrosController {
 		return a;
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/{idLivro}")
 	public Livro alterar(@RequestBody Livro livro, @PathVariable int idLivro) {
 		dao.Editar(livro, idLivro);
 		return livro;
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/{idLivro}")
 	public int delete( @PathVariable int idLivro) {
 		dao.Deletar(idLivro);
 		return idLivro;
