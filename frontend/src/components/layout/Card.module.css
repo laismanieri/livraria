@@ -13,10 +13,8 @@
  .card{
      border-radius: 12px;
      box-shadow: 5px 5px 15px 5px rgba(1, 23, 61, 0.22);
-     padding: 15px;
+     padding: 10px;
      margin: 15px;
-
-     height: 20em;
      transition: all 0,3s ease-out;
      background: whitesmoke;
  
@@ -26,25 +24,19 @@
      transform: translateY(-5px);
      cursor: pointer;
  }
-
- .titulo{
-    width:100%;   
-    height: 50px;
-    background: #146b97;
-    margin-top: 10px;
-
- }
- 
- .card h4{
-     color: #005782;
-     font-size: 12px;
-     font-weight: bold;
-
- }
  
  .card p{
-     color: #146b97;     
-     font-weight: bold;
+     color: #146b97;  
+     font-size: small;   
+ }
+
+ .titulo{
+    margin-top: 10px;
+    margin-bottom: 3px;
+ }
+
+ .preco{
+    margin-bottom: 7px;
  }
  
  .image{
@@ -53,8 +45,7 @@
  }
  
  .button{
-    width: 10em;
-    height: 2em;
+    width: 100%;
     border-radius: 5px;
     /* background: #3c67a4; */
     color: aliceblue;
