@@ -21,7 +21,7 @@ public class LivroDAO {
 		return lista;
 	}
 
-	public Livro buscarPorId(int idLivro) {
+	public Livro PegarPorId(int idLivro) {
 
 		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM  FROM LIVRO WHERE IDLIVRO = ?";
 		Object[] params = { idLivro };
@@ -49,7 +49,6 @@ public class LivroDAO {
 		return a;
 
 	}
-	
 	
 
 	public int Novo(Livro a) {
