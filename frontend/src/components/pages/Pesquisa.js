@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import Footer from '../layout/Footer';
 import NavBar from '../layout/NavBar';
 import { Link } from 'react-router-dom';
+import ListaLivro from '../layout/ListaLivro';
 
 
 function Pesquisa() {
@@ -17,7 +18,7 @@ function Pesquisa() {
                 </Link>
                 <h2 className={styles.h2}>Resultado da busca</h2>
                 <h4 className={styles.h4}>Você buscou por "...." e obteve ".." resultados</h4>
-              <Card/>
+              <ListaLivro/>
             </section>
           </Container>
           <Footer/>
