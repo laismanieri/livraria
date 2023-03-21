@@ -1,5 +1,4 @@
 import styles from './Card.module.css'
-import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Card from './Card';
