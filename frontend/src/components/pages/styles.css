@@ -195,6 +195,7 @@
     line-height: 1.5;
     padding-right: 5px;
     text-decoration: none;
+    margin-top: -8px;
 }
 
 .txt2 {
@@ -204,12 +205,14 @@
     text-decoration: none;
 }
 
-.esqueceu-senha {
-    color: #6a7dfe;
+.loginAcesso :hover{
+    color:rgb(144, 202, 252);
 }
 
-
-
+h1 {
+    font-size: 14px;
+    color: #6a7dfe;
+}
 
 
 

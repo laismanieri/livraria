@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import logoIMG from './assets/logo.png'
 import './styles.css'
-import Footer from '../layout/Footer';
+import {Link} from 'react-router-dom'
+
 
 function Login() {
   const [email, setEmail] = useState("")
@@ -38,16 +39,24 @@ function Login() {
                 />
               <span className='focus-input' data-placeholder="Password"></span>
             </div>
-            <a className='esqueceu-senha' href='#'>Esqueceu a senha ?</a>
+            
+            <a className='txt2' href='#'>Esqueceu a senha ?</a>
 
             <div className='container-login-form-btn'>
               <button className='login-form-btn'>Login</button>
             </div>
 
+            <div className='divide-wrap'>
+                <hr className='divide'/>
+            </div>
+
             <div className='text-center'>
               <span className='txt1'>Não possui uma conta ?</span>
+              <Link to="/cadastro">
+                <h1>Criar conta</h1>
+              </Link>
 
-              <a className='txt2' href='#'>Criar conta.</a>
+              {/* <a className='txt2' href='#'>Criar conta.</a> */}
             </div>
 
           </form>
