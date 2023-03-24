@@ -30,26 +30,27 @@ public class LivroDAO {
 
 	}
 	
-	public Livro buscarPorValor(String valor) {
+	public Livro[] buscarPorValor(String valor) {
+	    String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA "
+	            + "FROM LIVRO "
+	            + "WHERE ANODEPUBLICACAO like '%" + valor + "%'"
+	            + "OR PRECO like '%" + valor + "%'"
+	            + "OR NOME like '%" + valor + "%'"
+	            + "OR AUTOR like '%" + valor + "%'"
+	            + "OR GENERO like '%" + valor + "%'"
+	            + "OR EDITORA like '%" + valor + "%'";
 
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM  "
-				+ "FROM LIVRO "
-				+ "WHERE ANODEPUBLICACAO like '%" + valor + "%'"
-				+ "OR NOME like '%" + valor + "%'"
-				+ "OR AUTOR like '%" + valor + "%'"
-				+ "OR GENERO like '%" + valor + "%'"
-				+ "OR EDITORA like '%" + valor + "%'"
-				+ "OR QTDESTOQUE like '%" + valor + "%'"
-				+ "OR DESCRICAO like '%" + valor + "%'"
-		        + "OR IMAGEM like '%" + valor + "%'";
-				
-				
-		Object[] params = { valor };
-		Livro a = jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Livro.class), params);
-		return a;
+	    Object[] params = { valor };
+	    List<Livro> livros = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class), params);
 
+	    Livro[] arrayLivros = new Livro[livros.size()]; // cria um array do tamanho da lista
+
+	    for (int i = 0; i < livros.size(); i++) {
+	        arrayLivros[i] = livros.get(i); // adiciona cada elemento da lista no array
+	    }
+
+	    return arrayLivros;
 	}
-	
 
 	public int Novo(Livro a) {
 

@@ -3,34 +3,11 @@ import Container from "./Container";
 import {Link, NavLink} from 'react-router-dom';
 import  styles from "../layout/NavBar.module.css";
 import Usuario from "./Usuario";
-import { useEffect, useState } from 'react';
+
 
 function NavBar() {
 
-    const [lista, setLista] = useState([]);
-    
-    const handleInputChange = (e) => {
-        e.preventDefault();
-
-        const {value} = e.target;
-
-        if(!value) return;
-
-        const url = `http://localhost:8082/livro?q=${value}`;
-
-        fetch(url)
-        .then((response) => response.json())
-        .then(({lista}) =>{
-            setLista(lista)
-        })
-        ;
-
-    };
-
-    console.log(lista);
-
-
-    return(
+     return(
       <nav className={styles.navbar}>
             <Container>
               
@@ -39,7 +16,7 @@ function NavBar() {
             </Link>
                 <ul className={styles.list}>                            
                 <li className={styles.search}>
-                        <input type="search" placeholder="O que você quer ler?" onChange={handleInputChange}/> 
+                        <input type="search" placeholder="O que você quer ler?" /> 
                         <NavLink to='/pesquisa' >
                             <img  id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
                         </NavLink>

@@ -3,7 +3,7 @@ import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Carrinho from './components/pages/Carrinho';
-import Pesquisa from './components/pages/Pesquisa';
+import SearchBar from './components/pages/SearchBar';
 import Contact from './components/pages/Contact';
 
 
@@ -16,7 +16,7 @@ function App() {
           </Route>
           <Route element = {<Login/>} path='/login'/>
           <Route element = {<Carrinho/>} path='/carrinho'/>
-          <Route element = {<Pesquisa/>} path='/pesquisa'/>
+          <Route element = {<SearchBar/>} path='/pesquisa'/>
           <Route element = {<Contact/>} path='/contact'/>
         </Routes>
       </BrowserRouter>
