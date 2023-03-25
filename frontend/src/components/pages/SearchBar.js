@@ -23,15 +23,25 @@ function SearchBar(props) {
         // Filtrar os resultados com base na entrada de pesquisa
         const filteredData = Array.from(data).filter(livro => {
           const regex = new RegExp(searchTerm, 'gi');
-          return livro.nome.match(regex) || livro.descricao.match(regex);
+          return livro &&
+                 (livro.nome && livro.nome.match(regex)) ||
+                 (livro.autor && livro.autor.match(regex)) ||
+                 (livro.anoDePublicacao && livro.anoDePublicacao.match(regex)) ||
+                 (livro.genero && livro.genero.match(regex)) ||
+                 (livro.editora && livro.editora.match(regex));
         });
         setSearchResults(filteredData);
+        console.log(searchTerm);
+
+
       } else {
         console.error('Os dados não são um array', data);
       }
     })
     .catch(error => console.error(error));
-  
+    
+
+
   }
 
   const handleSearchInputChange = (event) => {

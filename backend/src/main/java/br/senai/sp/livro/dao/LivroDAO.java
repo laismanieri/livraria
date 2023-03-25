@@ -34,7 +34,6 @@ public class LivroDAO {
 	    String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA "
 	            + "FROM LIVRO "
 	            + "WHERE ANODEPUBLICACAO like '%" + valor + "%'"
-	            + "OR PRECO like '%" + valor + "%'"
 	            + "OR NOME like '%" + valor + "%'"
 	            + "OR AUTOR like '%" + valor + "%'"
 	            + "OR GENERO like '%" + valor + "%'"
