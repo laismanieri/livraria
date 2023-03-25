@@ -12,11 +12,11 @@ function Home(){
       <>
         <NavBar/>
         <Container customClass="min-height">
-          <section className={styles.homeContainer}>
+          {/* <section className={styles.homeContainer}>
             <Carrossel/>
             <h4 className={styles.titulo}>Destaques</h4>
             <ListaLivro/>
-          </section>
+          </section> */}
         </Container>
         <Footer/>
       </>

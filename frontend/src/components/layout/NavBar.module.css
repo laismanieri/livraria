@@ -45,7 +45,7 @@
 
 .search input, button{
     height: 100%;
-    width: 560px;
+    width: 540px;
     border: none;
     outline: none;
     padding: 0 10px;
@@ -60,9 +60,8 @@
     width: 60px;
     border: none;
     outline: none;
-    padding: 0 10px;
     background-color: white;
-    font-size: 16px;
+    font-size: 22px;
     border-radius: 5px;
 }
 
@@ -99,4 +98,100 @@
 
 .loginAcesso :hover{
     color:rgb(144, 202, 252);
+}
+
+
+
+
+.homeContainer{
+    width: 100%;
+    text-decoration: none;
+    margin-top: 50px;
+
+}
+
+.linkHome{
+    color:  #015a80;
+    text-decoration: none;
+    text-align: left;
+}
+
+
+.linkHome:hover{
+    color:rgb(144, 202, 252);
+}
+
+h2{
+    color:  #015a80;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+h4{
+    color:  #015a80;
+    font-size: 17px;
+
+  
+}
+
+
+.divCard{
+    margin-top: 20px;    
+    display: inline-block;   
+    justify-content: center;
+
+}
+
+.row{
+    text-align: center;
+    margin: 20px;
+    
+ }
+ 
+ .card{
+     border-radius: 12px;
+     box-shadow: 5px 5px 15px 5px rgba(1, 23, 61, 0.22);
+     padding: 10px;
+     transition: all 0,3s ease-out;
+     background: whitesmoke;
+     width: 150PX;
+
+ }
+  
+ .card:hover{
+     transform: translateY(-5px);
+     cursor: pointer;
+ }
+ 
+ .card p{
+     color: #146b97;  
+     font-size: small;   
+ }
+
+ .titulo{
+    margin-top: 10px;
+    margin-bottom: 3px;
+ }
+
+ .preco{
+    margin-bottom: 7px;
+ }
+ 
+ .image{
+     width:70%;
+     justify-items: center;
+ }
+ 
+ .button{
+    width: 100%;
+    border-radius: 5px;
+    /* background: #3c67a4; */
+    color: aliceblue;
+    background: #033579;
+
+ }
+ 
+ .button:hover{
+    cursor: pointer;
+        background: #3c67a4;
 }
