@@ -1,11 +1,8 @@
-
 .divCard{
     margin-top: 20px;    
-    display: flex;   
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: inline-block;   
     justify-content: center;
-
+    text-decoration: none;
 }
 
 .row{
@@ -20,7 +17,6 @@
      transition: all 0,3s ease-out;
      background: whitesmoke;
      width: 150PX;
-
  }
   
  .card:hover{
@@ -55,8 +51,11 @@
     background: #033579;
 
  }
+
  
  .button:hover{
     cursor: pointer;
-        background: #3c67a4;
+    background: #3c67a4;
+    text-decoration: none;
 }
+

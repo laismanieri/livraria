@@ -1,11 +1,13 @@
 
 import Container from "./Container";
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import  styles from "../layout/NavBar.module.css";
 import Usuario from "./Usuario";
 import React, { useState } from 'react';
 import ListaLivro from "./ListaLivro";
 import Carrossel from "./Carrossel";
+import Card from './Card';
+
 
 
 function NavBar() {
@@ -93,21 +95,12 @@ function NavBar() {
                     </h2>
 
                     {Array.isArray(searchResults) && searchResults.map((livro) => (
-                    <div className={styles.divCard}>
-                        <div className={styles.row}>
-                            <div className={styles.card} key={livro.idlivro}>
-                                <img className={styles.image} src={livro.imagem}  alt='' />
-                                <div>
-                                    <p className={styles.preco}>{livro.preco}</p>
-                                    <button className={styles.button}>
-                                        <NavLink to='/carrinho' >
-                                        Comprar
-                                        </NavLink>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <Card
+                        key={livro.idlivro}
+                        imagem={livro.imagem} 
+                        nome={livro.nome} 
+                        preco={livro.preco}
+                        />
                     ))}
                 </section> 
                 )} 
