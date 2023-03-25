@@ -8,8 +8,7 @@ function Home(){
     return (
       <>
         <NavBar/>
-        <Container customClass="min-height">
-        </Container>
+
         <Footer/>
       </>
     )
