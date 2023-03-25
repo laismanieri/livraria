@@ -1,9 +1,22 @@
 import {Table} from 'react-bootstrap';
 
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 import styles from '../layout/Tabela.module.css';
 import {AiFillDelete, AiFillEdit} from 'react-icons/ai';
 
 function Tabela(){
+
+    const [lista, setLista] = useState([]);
+    const getLivro = () => {
+        axios.get(`http://localhost:8082/livro`)
+        .then(response => setLista(response.data))
+        .catch(error => console.log(error))}
+         useEffect(() => {
+         getLivro();
+        })
+
     return(
         <Table className={styles.table} striped bordered hover>
                 <thead>
@@ -19,61 +32,27 @@ function Tabela(){
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Como eu era antes de você</td>
-                        <td>Jojo Moyes</td>
-                        <td>Intriseca</td>
-                        <td>Romance</td>
-                        <td>Ele morre</td>
-                        <td>2020</td>
+                   
+                        {
+                            lista.map((livro, index) => {
+                                return(
+                        <tr key={index}>
+                        <td>{livro.nome}</td>
+                        <td>{livro.autor}</td>
+                        <td>{livro.editora}</td>
+                        <td>{livro.genero}</td>
+                        <td>{livro.descricao}</td>
+                        <td>{livro.anoDePublicacao}</td>
                         <td><AiFillDelete/></td>
-                        <td><AiFillEdit/></td>
+                        <td><AiFillEdit/></td>        
                     </tr>
 
-                    <tr>
-                        <td>Como eu era antes de você</td>
-                        <td>Jojo Moyes</td>
-                        <td>Intriseca</td>
-                        <td>Romance</td>
-                        <td>Ele morre</td>
-                        <td>2020</td>
-                        <td><AiFillDelete/></td>
-                        <td><AiFillEdit/></td>
-                    </tr>
+                                )
+                            }
 
-                    <tr>
-                        <td>Como eu era antes de você</td>
-                        <td>Jojo Moyes</td>
-                        <td>Intriseca</td>
-                        <td>Romance</td>
-                        <td>Ele morre</td>
-                        <td>2020</td>
-                        <td><AiFillDelete/></td>
-                        <td><AiFillEdit/></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Como eu era antes de você</td>
-                        <td>Jojo Moyes</td>
-                        <td>Intriseca</td>
-                        <td>Romance</td>
-                        <td>Ele morre</td>
-                        <td>2020</td>
-                        <td><AiFillDelete/></td>
-                        <td><AiFillEdit/></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Como eu era antes de você</td>
-                        <td>Jojo Moyes</td>
-                        <td>Intriseca</td>
-                        <td>Romance</td>
-                        <td>Ele morre</td>
-                        <td>2020</td>
-                        <td><AiFillDelete/></td>
-                        <td><AiFillEdit/></td>
-                    </tr>
-                    
+                            )
+                        }
+                   
                 </tbody>
             </Table>
     );
