@@ -52,7 +52,7 @@ function NavBar() {
   return (
     <>
         <nav className={styles.navbar}>
-            <Container>
+            <Container>  
             <Link to='/' onClick={() => window.location.reload()}>
                 <img src='./img/logo.png' alt="logo"/>
             </Link>
@@ -74,7 +74,7 @@ function NavBar() {
             </ul>
             </Container>
         </nav>
-        <Container>
+        <Container customClass="min-height">
             {showHomeContainer && (
                 <section className={styles.homeContainer}>
                     <Carrossel/>
