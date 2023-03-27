@@ -16,7 +16,7 @@ const CarouselCard = ( ) => {
       .catch(error => console.log(error));
   }, []);
 
-  const Card = ({ preco, nome, imagem }) => {    
+  const Card = ({ preco, nome, imagem, precoOferta }) => {    
     return (
       <>
         
@@ -24,7 +24,7 @@ const CarouselCard = ( ) => {
             <img src={imagem} alt={nome} />
             <h2>{nome}</h2>
             <h3>R$ {preco}</h3>
-            <p>R$ {preco}</p>
+            <p>R$ {precoOferta}</p>
             <NavLink to='/carrinho' >
               <button className={styles.button}>    Comprar                        
               </button>
@@ -38,15 +38,15 @@ const CarouselCard = ( ) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 6,
+    speed: 1000,
+    slidesToShow: 5, // ou 4
     slidesToScroll: 1
   };
   
   return (
     <Slider {...settings}>
       {cards.map(card => (
-        <Card key={card.id} preco={card.preco} nome={card.nome} imagem={card.imagem} />
+        <Card key={card.id} preco={card.preco} nome={card.nome} imagem={card.imagem}precoOferta={card.precoOferta} />
       ))}
     </Slider>
   );

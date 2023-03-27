@@ -16,14 +16,14 @@ public class LivroDAO {
 	JdbcTemplate jdbcTemplate;
 
 	public List<Livro> listarTodos() {
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM FROM LIVRO";
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  FROM LIVRO";
 		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
 		return lista;
 	}
 
 	public Livro PegarPorId(int idLivro) {
 
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM  FROM LIVRO WHERE IDLIVRO = ?";
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  FROM LIVRO WHERE IDLIVRO = ?";
 		Object[] params = { idLivro };
 		Livro a = jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Livro.class), params);
 		return a;
@@ -53,17 +53,17 @@ public class LivroDAO {
 
 	public int Novo(Livro a) {
 
-		String sql = "INSERT INTO LIVRO (ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM) VALUES (?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO LIVRO (ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		int result = jdbcTemplate.update(sql, a.getAnoDePublicacao(), a.getPreco(), a.getNome(), a.getAutor(), 
-				a.getGenero(), a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem());
+				a.getGenero(), a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta());
 
 		return result;		
 	}
 
 	public int Editar(Livro a, int idLivro) {
-		String sql = "UPDATE LIVRO SET ANODEPUBLICACAO=?, PRECO=?, NOME=?, AUTOR=?, GENERO=?, EDITORA=?, QTDESTOQUE=?, DESCRICAO=?, IMAGEM=? WHERE IDLIVRO =?";
+		String sql = "UPDATE LIVRO SET ANODEPUBLICACAO=?, PRECO=?, NOME=?, AUTOR=?, GENERO=?, EDITORA=?, QTDESTOQUE=?, DESCRICAO=?, IMAGEM=?, QTDPAGINA=?, OFERTA=?, DESTAQUE=?, PRECOOFERTA=?,  WHERE IDLIVRO =?";
 		Object[] params = { a.getAnoDePublicacao(), a.getPreco(), a.getNome(), a.getAutor(), a.getGenero(),
-				a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem() };
+				a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta() };
 		int result = jdbcTemplate.update(sql, params, idLivro);
 		return result;
 	}

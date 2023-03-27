@@ -15,7 +15,7 @@ function Card({ imagem, nome, preco }) {
                         </p>
                     </div>
                     <p className={styles.preco}>
-                        {preco}
+                      R$ {preco}
                     </p>
                     <NavLink to='/carrinho' >
                         <button className={styles.button}>                      
