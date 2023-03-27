@@ -3,6 +3,7 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Carrinho from './components/pages/Carrinho';
 import Contact from './components/pages/Contact';
+import Livro from './components/layout/Livro';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route element = {<Login/>} path='/login'/>
           <Route element = {<Carrinho/>} path='/carrinho'/>
           <Route element = {<Contact/>} path='/contact'/>
+          <Route element = {<Livro/>} path='/livro'/>
         </Routes>
       </BrowserRouter>
 
