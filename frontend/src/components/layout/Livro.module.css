@@ -1,11 +1,11 @@
+
 .gridContainer {
     display: grid;
     grid-template-columns: 20em 30em 25em;
     grid-template-rows: 40em;
     padding: 10px;
-    color: #146b97;  
-
-  }
+    color: #146b97; 
+}
   
 .gridItemLong {
     padding: 20px;
@@ -15,9 +15,6 @@
     margin-bottom: 50px;
   }
 
-.imagem{
-
-}
 
 
 .titulo{

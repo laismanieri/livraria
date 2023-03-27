@@ -137,10 +137,10 @@ h4{
 .gridContainer {
     display: grid;
     grid-template-columns: 20em 30em 25em;
-    grid-template-rows: 40em;
+    grid-template-rows: 35em;
     padding: 10px;
     color: #146b97;  
-
+    margin-top: 50px;
   }
   
 .gridItemLong {
@@ -150,11 +150,6 @@ h4{
     color: #146b97;  
     margin-bottom: 50px;
   }
-
-.imagem{
-
-}
-
 
 .titulo{
     font-weight: bold;
@@ -179,8 +174,7 @@ h4{
 }
 
 .compra{
-    border: #149740;
-    background:rgb(144, 202, 252);
+    background:rgb(192, 225, 255);
     border-radius: 15px;
     padding: 30px;
 
@@ -208,18 +202,27 @@ h4{
     text-decoration: none;
 }
 
+.ficha{
+    border: solid 1px rgb(192, 225, 255);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
 .ficha1, .ficha2{
         display: flex;
         justify-content: space-between;
-        padding: 8px 0;
+        padding: 10px;
         flex-wrap: nowrap;
         font-size: 17px;
         color: #146b97;  
         border-radius: 10px;
+        margin-bottom: 0;
+
 }
 
 .ficha2{
-    background:rgb(144, 202, 252);
+    background:rgb(192, 225, 255);
 }
 
 .h1{
