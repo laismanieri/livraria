@@ -121,10 +121,15 @@
     color:rgb(144, 202, 252);
 }
 
-h2{
+.oferta {
     color:  #015a80;
     font-size: 25px;
-    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.destaque {
+    color:  #015a80;
+    font-size: 25px;
 }
 
 h4{

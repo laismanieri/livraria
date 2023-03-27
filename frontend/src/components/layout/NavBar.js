@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import ListaLivro from "./ListaLivro";
 import Carrossel from "./Carrossel";
 import Card from './Card';
+import CarouselCard from "./CarouselCard";
 
 
 
@@ -82,10 +83,18 @@ function NavBar() {
             )}
             {showHomeContainer && (
                 <section className={styles.homeContainer}>
-                    <h2>
+                    <h2 className={styles.destaque} >
                         Destaques
                     </h2>
                     <ListaLivro/>
+                </section>
+            )}
+            {showHomeContainer && (
+                <section className={styles.homeContainer}>
+                    <h2 className={styles.oferta}>
+                        Ofertas
+                    </h2>
+                    <CarouselCard/>
                 </section>
             )}
             {!showHomeContainer && (
