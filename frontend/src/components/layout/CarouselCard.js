@@ -6,19 +6,15 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styles from "./CardCarousel.module.css";
 
-const CarouselCard = ({ imagem, nome, preco }) => {
+const CarouselCard = ( ) => {
 
   const [cards, setCards] = useState([]);
 
-  const getLivro = () => {
-      axios.get(`http://localhost:8082/livro`)
-          .then(response => setCards(response.data))
-          .catch(error => console.log(error))
-  }
-
   useEffect(() => {
-      getLivro();
-  })
+    axios.get(`http://localhost:8082/livro`)
+      .then(response => setCards(response.data))
+      .catch(error => console.log(error));
+  }, []);
 
   const Card = ({ preco, nome, imagem }) => {    
     return (
