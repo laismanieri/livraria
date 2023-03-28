@@ -1,0 +1,27 @@
+body, html{
+    margin: 0;
+    padding: 0;
+  }
+  .container{
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+     align-items: center;
+     padding: 10vh 0;
+  }
+  
+  .card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+    margin-top: 15px;
+    
+    padding: 10px;
+    background: #eee;
+  }
+  
+  .card-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #888;
+  }
