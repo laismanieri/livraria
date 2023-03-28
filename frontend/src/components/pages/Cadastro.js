@@ -9,6 +9,8 @@ function Cadastro() {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [confirmasenha, setConfirmasenha] = useState("")
+  const [cpf, setCpf] = useState("")
+  const [nascimento, setNascimento] = useState("")
 
   return (
    <div className="container">
@@ -42,6 +44,28 @@ function Cadastro() {
                 onChange={e => setSobrenome(e.target.value)}
                 />
               <span className='focus-input' data-placeholder="Sobrenome"></span>
+            </div>
+
+            <div className="wrap-input">
+              <input
+                id='cpf' 
+                className={cpf !== "" ? 'has-val input' : 'input'}  
+                type="text" 
+                value={cpf}
+                onChange={e => setCpf(e.target.value)}
+                />
+              <span className='focus-input' data-placeholder="CPF"></span>
+            </div>
+
+            <div className="wrap-input">
+              <input
+                id='nascimento' 
+                className={nascimento !== "" ? 'has-val input' : 'input'}  
+                type="text" 
+                value={nascimento}
+                onChange={e => setNascimento(e.target.value)}
+                />
+              <span className='focus-input' data-placeholder="Data de nascimento"></span>
             </div>
 
             <div className="wrap-input">

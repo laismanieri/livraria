@@ -5,6 +5,7 @@ import Login from './components/pages/Login';
 import Carrinho from './components/pages/Carrinho';
 import Pesquisa from './components/pages/Pesquisa';
 import Contact from './components/pages/Contact';
+import Cadastro from './components/pages/Cadastro';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route element = {<Carrinho/>} path='/carrinho'/>
           <Route element = {<Pesquisa/>} path='/pesquisa'/>
           <Route element = {<Contact/>} path='/contact'/>
+          <Route element = {<Cadastro/>} path='/cadastro'/>
         </Routes>
       </BrowserRouter>
 
