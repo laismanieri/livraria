@@ -99,7 +99,7 @@ function NavBar() {
             )}
             {!showHomeContainer && (
                 <section className={styles.homeContainer}>
-                    <h2>
+                    <h2 className={styles.resultado}>
                         Resultado da busca
                     </h2>
 

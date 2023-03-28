@@ -3,11 +3,11 @@
     text-align: center;
     border-radius: 12px;
     box-shadow: 5px 5px 15px 5px rgba(1, 23, 61, 0.22);
-    padding: 15px 25px;
+    padding: 0 35px 20px 35px;
     transition: all 0,3s ease-out;
     background: whitesmoke;
-    width: 150PX;
-    margin: 10px 50px 10px 50px;
+    width: 180PX;
+    margin: 10px 0 10px 20px;
     color: #146b97;
 
 }
@@ -29,6 +29,14 @@ p{
    margin-bottom: 7px;
    font-size: 13px;
  
+}
+
+.desconto{
+    width:27%;
+    position: relative;
+    top: 18px;
+    right: 9px;
+    z-index: 1;
 }
 
 img{

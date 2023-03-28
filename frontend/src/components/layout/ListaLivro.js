@@ -5,13 +5,17 @@ import Card from './Card';
 
 function ListaLivro() {
 
-    const [lista, setLista] = useState([]);
+    const [cards, setCards] = useState([]);
 
     const getLivro = () => {
         axios.get(`http://localhost:8082/livro`)
-            .then(response => setLista(response.data))
-            .catch(error => console.log(error))
+        .then(response => {
+            const filteredCards = response.data.filter(card => card.destaque);
+            setCards(filteredCards);
+        })
+        .catch(error => console.log(error));
     }
+    
 
     useEffect(() => {
         getLivro();
@@ -22,7 +26,7 @@ function ListaLivro() {
         <>
             <div className={styles.divCard}>
                 {
-                    lista.map((livro, index) => {
+                    cards.map((livro, index) => {
                         return (
                            <Card key={index} imagem={livro.imagem} nome={livro.nome} preco={livro.preco}/>
                         )

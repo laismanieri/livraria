@@ -16,18 +16,38 @@ public class LivroDAO {
 	JdbcTemplate jdbcTemplate;
 
 	public List<Livro> listarTodos() {
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  FROM LIVRO";
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+				+ "FROM LIVRO";
 		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
 		return lista;
 	}
 
 	public Livro PegarPorId(int idLivro) {
 
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  FROM LIVRO WHERE IDLIVRO = ?";
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+				+ "FROM LIVRO "
+				+ "WHERE IDLIVRO = ?";
 		Object[] params = { idLivro };
 		Livro a = jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Livro.class), params);
 		return a;
 
+	}
+	
+	
+	public List<Livro> listarOferta() {
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+				+ "FROM LIVRO"
+				+ "WHERE OFERTA = 1";
+		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
+		return lista;
+	}
+	
+	public List<Livro> listarDestaque() {
+		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+				+ "FROM LIVRO"
+				+ "WHERE OFERTA = 1";
+		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
+		return lista;
 	}
 	
 	public Livro[] buscarPorValor(String valor) {
@@ -53,7 +73,8 @@ public class LivroDAO {
 
 	public int Novo(Livro a) {
 
-		String sql = "INSERT INTO LIVRO (ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO LIVRO (ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA ) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		int result = jdbcTemplate.update(sql, a.getAnoDePublicacao(), a.getPreco(), a.getNome(), a.getAutor(), 
 				a.getGenero(), a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta());
 
@@ -61,7 +82,8 @@ public class LivroDAO {
 	}
 
 	public int Editar(Livro a, int idLivro) {
-		String sql = "UPDATE LIVRO SET ANODEPUBLICACAO=?, PRECO=?, NOME=?, AUTOR=?, GENERO=?, EDITORA=?, QTDESTOQUE=?, DESCRICAO=?, IMAGEM=?, QTDPAGINA=?, OFERTA=?, DESTAQUE=?, PRECOOFERTA=?,  WHERE IDLIVRO =?";
+		String sql = "UPDATE LIVRO SET ANODEPUBLICACAO=?, PRECO=?, NOME=?, AUTOR=?, GENERO=?, EDITORA=?, QTDESTOQUE=?, DESCRICAO=?, IMAGEM=?, QTDPAGINA=?, OFERTA=?, DESTAQUE=?, PRECOOFERTA=?  "
+				+ "WHERE IDLIVRO =?";
 		Object[] params = { a.getAnoDePublicacao(), a.getPreco(), a.getNome(), a.getAutor(), a.getGenero(),
 				a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta() };
 		int result = jdbcTemplate.update(sql, params, idLivro);
@@ -69,7 +91,8 @@ public class LivroDAO {
 	}
 
 	public int Deletar(int idLivro) {
-		String sql = "DELETE FROM LIVRO WHERE IDLIVRO =?";
+		String sql = "DELETE FROM LIVRO "
+				+ "WHERE IDLIVRO =?";
 		Object[] params = { idLivro };
 		int result = jdbcTemplate.update(sql, params, idLivro);
 		return result;

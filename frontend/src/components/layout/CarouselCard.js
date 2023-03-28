@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,45 +12,44 @@ const CarouselCard = ( ) => {
 
   useEffect(() => {
     axios.get(`http://localhost:8082/livro`)
-      .then(response => setCards(response.data))
+      .then(response => {
+        const filteredCards = response.data.filter(card => card.oferta);
+        setCards(filteredCards);
+      })
       .catch(error => console.log(error));
   }, []);
 
   const Card = ({ preco, nome, imagem, precoOferta }) => {    
     return (
       <>
-        
-          <div className={styles.card}>
+        <div className={styles.card}>
+          <img src="./img/desconto.png"alt='desconto' className={styles.desconto} />
+          <Link to='/livro'>
             <img src={imagem} alt={nome} />
-            <h2>{nome}</h2>
-            <h3>R$ {preco}</h3>
-            <p>R$ {precoOferta}</p>
-            <NavLink to='/carrinho' >
-              <button className={styles.button}>    Comprar                        
-              </button>
-            </NavLink>
-          </div>
+          </Link>
+          <h2>{nome}</h2>
+          <h3>R$ {preco}</h3>
+          <p>R$ {precoOferta}</p>
+          <button className={styles.button}>Comprar                        
+          </button>
+        </div>
       </>
     );
-  };
-
+  }
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
-    slidesToShow: 5, // ou 4
+    slidesToShow: 5,
     slidesToScroll: 1
   };
-  
+
   return (
-    <Slider {...settings}>
-      {cards.map(card => (
-        <Card key={card.id} preco={card.preco} nome={card.nome} imagem={card.imagem}precoOferta={card.precoOferta} />
-      ))}
-    </Slider>
+    <>
+      <Slider {...settings}>
+        {cards.map((card, index) => <Card key={index} {...card} />)}
+      </Slider>
+    </>
   );
-
-};
-
+}
 export default CarouselCard;
