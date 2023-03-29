@@ -36,7 +36,7 @@
 
 .search{
     height: 40px;
-    width: 600px;
+    width: 595px;
     display: flex;
     background:white;
     border-radius: 5px;
@@ -44,8 +44,7 @@
 }
 
 .search input, button{
-    height: 100%;
-    width: 540px;
+    width: 530px;
     border: none;
     outline: none;
     padding: 0 10px;
@@ -56,8 +55,7 @@
 }
 
 .search button{
-    height: 100%;
-    width: 60px;
+    width: 55px;
     border: none;
     outline: none;
     background-color: white;
@@ -66,7 +64,6 @@
 }
 
 .search img{
-    height: 100%;
     width: 40px;
 }
 

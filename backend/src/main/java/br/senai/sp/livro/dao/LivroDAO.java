@@ -45,13 +45,13 @@ public class LivroDAO {
 	public List<Livro> listarDestaque() {
 		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
 				+ "FROM LIVRO"
-				+ "WHERE OFERTA = 1";
+				+ "WHERE destaque = 1";
 		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
 		return lista;
-	}
+	}	
 	
 	public Livro[] buscarPorValor(String valor) {
-	    String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA "
+	    String sql = "SELECT ANODEPUBLICACAO, NOME, AUTOR, GENERO, EDITORA "
 	            + "FROM LIVRO "
 	            + "WHERE ANODEPUBLICACAO like '%" + valor + "%'"
 	            + "OR NOME like '%" + valor + "%'"

@@ -8,10 +8,11 @@ import ListaLivro from "./ListaLivro";
 import Carrossel from "./Carrossel";
 import Card from './Card';
 import CarouselCard from "./CarouselCard";
-
+import CardOferta from "./CardOferta";
 
 
 function NavBar() {
+  
   const [showHomeContainer, setShowHomeContainer] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -34,17 +35,18 @@ function NavBar() {
                  (livro.anoDePublicacao && livro.anoDePublicacao.match(regex)) ||
                  (livro.genero && livro.genero.match(regex)) ||
                  (livro.editora && livro.editora.match(regex));
-        });
+        }).map(livro => ({
+          ...livro,
+          isOferta: livro.oferta === true         }));
         setSearchResults(filteredData);
         setShowHomeContainer(false);
-
       } else {
         console.error('Os dados não são um array', data);
       }
     })
     .catch(error => console.error(error));
-    
-  }
+  };
+  
 
   const handleSearchInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -98,23 +100,34 @@ function NavBar() {
                 </section>
             )}
             {!showHomeContainer && (
-                <section className={styles.homeContainer}>
-                    <h2 className={styles.resultado}>
-                        Resultado da busca
-                    </h2>
-
-                    {Array.isArray(searchResults) && searchResults.map((livro) => (
-                        <Card
-                        key={livro.idlivro}
-                        imagem={livro.imagem} 
-                        nome={livro.nome} 
-                        preco={livro.preco}
-                        />
-                    ))}
-                </section> 
-                )} 
-        </Container>
-    </>
+            <section className={styles.homeContainer}>
+                <h2 className={styles.resultado}>Resultado da busca  </h2>
+                {Array.isArray(searchResults) && searchResults.map((livro) => {
+                    if (livro.isOferta && livro.isOferta === true) {
+                        return (
+                                <CardOferta
+                                    key={livro.idlivro}
+                                    imagem={livro.imagem}
+                                    nome={livro.nome}
+                                    preco={livro.preco}
+                                    precoOferta={livro.precoOferta}
+                                />
+                                );
+                        } else {
+                        return (
+                                <Card
+                                    key={livro.idlivro}
+                                    imagem={livro.imagem}
+                                    nome={livro.nome}
+                                    preco={livro.preco}
+                                />
+                                );
+                }
+                })}
+            </section>
+            )}
+            </Container>
+        </>
     )
 }
 
