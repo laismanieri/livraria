@@ -1,5 +1,5 @@
 import styles from './Card.module.css'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Card({ imagem, nome, preco }) {
@@ -8,7 +8,9 @@ function Card({ imagem, nome, preco }) {
         <div className={styles.divCard}>
             <div className={styles.row}>
                 <div className={styles.card}>
-                    <img className={styles.image} src={imagem} alt='' />
+                <Link to='/livro'>
+                    <img src={imagem} alt={nome} />
+                </Link>
                     <div>
                         <p className={styles.titulo}>
                             {nome}
@@ -17,11 +19,11 @@ function Card({ imagem, nome, preco }) {
                     <p className={styles.preco}>
                       R$ {preco}
                     </p>
-                    <NavLink to='/carrinho' >
+                    <Link to='/carrinho' >
                         <button className={styles.button}>                      
                             Comprar                        
                         </button>
-                    </NavLink>
+                    </Link>
                 </div>
             </div>
         </div>

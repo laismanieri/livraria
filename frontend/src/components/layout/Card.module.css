@@ -13,10 +13,10 @@
  .card{
      border-radius: 12px;
      box-shadow: 5px 5px 15px 5px rgba(1, 23, 61, 0.22);
-     padding: 10px;
+     padding: 25px;
      transition: all 0,3s ease-out;
      background: whitesmoke;
-     width: 150PX;
+     width: 140PX;
  }
   
  .card:hover{
