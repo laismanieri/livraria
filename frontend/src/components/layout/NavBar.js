@@ -57,35 +57,33 @@ function NavBar() {
     <>
         <nav className={styles.navbar}>
             <Container>  
-            <Link to='/' onClick={() => window.location.reload()}>
-                <img src='./img/logo.png' alt="logo"/>
-            </Link>
-            <ul className={styles.list}>                            
-                <li className={styles.search}>
-                <form onSubmit={handleSearchSubmit}>
-                    <input type="text" placeholder="O que você quer ler?"  value={searchTerm} onChange={handleSearchInputChange} />
-                    <button type="submit" >                               
-                    <img  id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
-                    </button>
-                </form>
-                </li> 
-                <Usuario/>
-                <li className={styles.item} >
-                <Link to="/carrinho">
-                    <img src="./img/compra.png" alt="ícone sacola" />
+                <Link to='/' onClick={() => window.location.reload()}>
+                    <img src='./img/logo.png' alt="logo"/>
                 </Link>
-                </li >
-            </ul>
+                <ul className={styles.list}>                            
+                    <li className={styles.search}>
+                    <form onSubmit={handleSearchSubmit}>
+                        <input type="text" placeholder="O que você quer ler?"  value={searchTerm} onChange={handleSearchInputChange} />
+                        <button type="submit" >                               
+                        <img  id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
+                        </button>
+                    </form>
+                    </li> 
+                    <Usuario/>
+                    <li className={styles.item} >
+                    <Link to="/carrinho">
+                        <img src="./img/compra.png" alt="ícone sacola" />
+                    </Link>
+                    </li >
+                </ul>
             </Container>
         </nav>
         <Container customClass="min-height">
             {showHomeContainer && (
-                <section className={styles.homeContainer}>
                     <Carrossel/>
-                </section>
             )}
             {showHomeContainer && (
-                <section className={styles.homeContainer}>
+                <section className={styles.destaqueContainer}>
                     <h2 className={styles.destaque} >
                         Destaques
                     </h2>
@@ -93,7 +91,7 @@ function NavBar() {
                 </section>
             )}
             {showHomeContainer && (
-                <section className={styles.homeContainer}>
+                <section className={styles.carouselContainer}>
                     <h2 className={styles.oferta}>
                         Ofertas
                     </h2>
@@ -101,11 +99,15 @@ function NavBar() {
                 </section>
             )}
             {!showHomeContainer && (
-            <section className={styles.homeContainer}>
-                <h2 className={styles.resultado}>Resultado da busca  </h2>
+                <>
+                 <h2 className={styles.resultado}>Resultado da busca...</h2>
+                <section className={styles.resultadoContainer}>
+               
                 {Array.isArray(searchResults) && searchResults.map((livro) => {
                     if (livro.isOferta && livro.isOferta === true) {
                         return (
+                            
+                            <div className={styles.divCardOferta}>
                                 <CardOferta
                                     key={livro.idlivro}
                                     imagem={livro.imagem}
@@ -113,6 +115,7 @@ function NavBar() {
                                     preco={livro.preco}
                                     precoOferta={livro.precoOferta}
                                 />
+                                </div>
                                 );
                         } else {
                         return (
@@ -126,6 +129,7 @@ function NavBar() {
                 }
                 })}
             </section>
+            </>
             )}
             </Container>
         </>
