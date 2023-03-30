@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import styles from "./CardCarousel.module.css";
+import "./CardCarousel.css";
 
 const CarouselCard = ( ) => {
 
@@ -22,15 +22,15 @@ const CarouselCard = ( ) => {
   const Card = ({ preco, nome, imagem, precoOferta }) => {    
     return (
       <>
-        <div className={styles.card}>
-          <img src="./img/desconto.png"alt='desconto' className={styles.desconto} />
+        <div className="card">
+          <img src="./img/desconto.png"alt='desconto' className="desconto"/>
           <Link to='/livro'>
             <img src={imagem} alt={nome} />
           </Link>
           <h2>{nome}</h2>
           <h3>R$ {preco}</h3>
           <p>R$ {precoOferta}</p>
-          <button className={styles.button}>Comprar                        
+          <button className="button">Comprar                        
           </button>
         </div>
       </>
@@ -46,7 +46,9 @@ const CarouselCard = ( ) => {
 
   return (
     <>
-      <Slider {...settings}>
+      <Slider  {...settings}   
+        prevArrow={<div className="slick-prev" ></div>}
+        nextArrow={<div className="slick-next"></div>}>
         {cards.map((card, index) => <Card key={index} {...card} />)}
       </Slider>
     </>

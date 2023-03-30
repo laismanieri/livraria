@@ -11,6 +11,7 @@ import CarouselCard from "./CarouselCard";
 import CardOferta from "./CardOferta";
 
 
+
 function NavBar() {
   
   const [showHomeContainer, setShowHomeContainer] = useState(true);
