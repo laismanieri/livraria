@@ -2,6 +2,7 @@
     display: inline-block;   
     justify-content: center;
     text-decoration: none;
+
 }
 
 .row{
@@ -15,7 +16,8 @@
      padding: 25px;
      transition: all 0,3s ease-out;
      background: whitesmoke;
-     width: 140PX;
+     width: 160PX;
+     text-align: center;
  }
   
  .card:hover{
@@ -23,18 +25,24 @@
      cursor: pointer;
  }
  
- .card p{
-     color: #146b97;  
-     font-size: small;   
- }
 
- .titulo{
+ .divTitulo {
+    height: 60px; /* Altura aumentada para caber textos maiores */
+    color: #146b97;  
+}
+  
+  .titulo {
+    font-weight: 500;
     margin-top: 10px;
     margin-bottom: 3px;
- }
+    font-size: 12px;
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    overflow: hidden; /* Esconda qualquer texto que não couber */
+    text-overflow: ellipsis; /* Corte o texto que ultrapassar a altura */
+  }
 
  .preco{
-    margin-bottom: 7px;
+    color: #146b97;  
  }
  
  .image{

@@ -147,6 +147,15 @@
 
 }
 
+.tituloResultadoContainer{
+    width: 100%;
+    height: 150px;
+    text-decoration: none;
+    margin: 0;
+    margin-top: 70px;
+}
+
+
 .carouselContainer{
     width: 100%;
     text-decoration: none;
@@ -191,12 +200,22 @@ h4{
   
 }
 
-.resultado{
-    margin: 50px 0 0 0 ;
-    color:  #015a80;
-    font-size: 20px;
-    font-weight: 500;
+.divTitulo {
+    height: 60px; /* Altura aumentada para caber textos maiores */
+    color: #146b97;  
 }
+  
+  .titulo {
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-size: 12px;
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    overflow: hidden; /* Esconda qualquer texto que não couber */
+    text-overflow: ellipsis; /* Corte o texto que ultrapassar a altura */
+  }
+
+
 
 .gridContainer {
     display: grid;

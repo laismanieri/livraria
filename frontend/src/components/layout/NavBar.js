@@ -62,12 +62,12 @@ function NavBar() {
                 </Link>
                 <ul className={styles.list}>                            
                     <li className={styles.search}>
-                    <form  className={styles.formSearch} onSubmit={handleSearchSubmit}>
-                        <input type="text" placeholder="O que você quer ler?"  value={searchTerm} onChange={handleSearchInputChange} />
-                            <button type="submit" >                               
-                        <img className={styles.lupaSearch} id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
-                        </button>
-                    </form>
+                        <form  className={styles.formSearch} onSubmit={handleSearchSubmit}>
+                            <input type="text" placeholder="O que você quer ler?"  value={searchTerm} onChange={handleSearchInputChange} />
+                                <button type="submit" >                               
+                            <img className={styles.lupaSearch} id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
+                            </button>
+                        </form>
                     </li> 
                     <Usuario/>
                     <li className={styles.item} >
@@ -78,7 +78,7 @@ function NavBar() {
                 </ul>
             </Container>
         </nav>
-        <Container customClass="min-height">
+        <Container>
             {showHomeContainer && (
                     <Carrossel/>
             )}
@@ -100,13 +100,18 @@ function NavBar() {
             )}
             {!showHomeContainer && (
                 <>
-                 <h2 className={styles.resultado}>Resultado da busca...</h2>
+                    <section className={styles.tituloResultadoContainer}>
+                    <h2 className={styles.destaque} >
+                        Resultado da busca...
+                    </h2>
+                </section>
+
                 <section className={styles.resultadoContainer}>
                
                 {Array.isArray(searchResults) && searchResults.map((livro) => {
                     if (livro.isOferta && livro.isOferta === true) {
                         return (
-                            
+                            <>
                             <div className={styles.divCardOferta}>
                                 <CardOferta
                                     key={livro.idlivro}
@@ -115,7 +120,7 @@ function NavBar() {
                                     preco={livro.preco}
                                     precoOferta={livro.precoOferta}
                                 />
-                                </div>
+                                </div></>
                                 );
                         } else {
                         return (
@@ -129,9 +134,10 @@ function NavBar() {
                 }
                 })}
             </section>
+
             </>
             )}
-            </Container>
+            </Container>            
         </>
     )
 }

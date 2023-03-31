@@ -11,7 +11,7 @@ function Card({ imagem, nome, preco }) {
                 <Link to='/livro'>
                     <img src={imagem} alt={nome} />
                 </Link>
-                    <div>
+                    <div className={styles.divTitulo}>
                         <p className={styles.titulo}>
                             {nome}
                         </p>
