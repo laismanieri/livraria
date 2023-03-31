@@ -62,15 +62,15 @@ function NavBar() {
                 </Link>
                 <ul className={styles.list}>                            
                     <li className={styles.search}>
-                    <form onSubmit={handleSearchSubmit}>
+                    <form  className={styles.formSearch} onSubmit={handleSearchSubmit}>
                         <input type="text" placeholder="O que você quer ler?"  value={searchTerm} onChange={handleSearchInputChange} />
-                        <button type="submit" >                               
-                        <img  id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
+                            <button type="submit" >                               
+                        <img className={styles.lupaSearch} id="lupa" src="./img/lupa.png" alt="ícone menu lateral"/>
                         </button>
                     </form>
                     </li> 
                     <Usuario/>
-                    <li className={styles.item} >
+                        <li className={styles.item} >
                     <Link to="/carrinho">
                         <img src="./img/compra.png" alt="ícone sacola" />
                     </Link>

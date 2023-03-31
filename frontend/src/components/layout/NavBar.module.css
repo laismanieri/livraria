@@ -18,6 +18,36 @@
 }
 
 
+.imgUser{
+    width: 50%;
+    
+}
+
+
+.divLogin{
+    display: block;
+    margin: 15px 5px;
+}
+
+.boasVindas{
+    font-weight: bolder;
+}
+
+.entre{
+    text-align: left;
+    font-weight: bolder;
+
+}
+
+
+
+.loginUser{
+    display: flex;
+    margin-right: 3em;
+    text-decoration: none;
+}
+
+
 .list {
     display: flex;
     list-style: none;
@@ -37,25 +67,33 @@
 .search{
     height: 40px;
     width: 595px;
-    display: flex;
     background:white;
-    border-radius: 5px;
+    border-radius: 7px;
     margin-right: 3em;
 }
 
-.search input, button{
-    width: 530px;
+.search input{
+    width: 550px;
     border: none;
     outline: none;
-    padding: 0 10px;
+    padding: 0 0 10px 15px ;
     color: #015a80;
     font-size: 16px;
-    border-radius: 5px 0 0 5px;
-    
+
+}
+
+.formSearch{
+    display: flex;
+
+}
+
+.search input{
+    bottom: 3px;
 }
 
 .search button{
     width: 55px;
+    height: 35px;
     border: none;
     outline: none;
     background-color: white;
@@ -63,22 +101,15 @@
     border-radius: 5px;
 }
 
-.search img{
+
+.lupaSearch{
     width: 40px;
-}
-
-.loginUser{
-    display: flex;
-    margin-right: 3em;
-    text-decoration: none;
 
 }
 
-.login{
-    padding: 0 10px;
-    display: block;
-    text-decoration: none;
-}
+
+
+
 
 .login h1, a{
     font-size: 14px;
@@ -88,9 +119,6 @@
 }
 
 
-.login h1{
-    font-weight: bolder;
-}
 
 
 .loginAcesso :hover{
