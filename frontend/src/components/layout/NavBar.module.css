@@ -20,23 +20,24 @@
 
 .imgUser{
     width: 50%;
-    
+    justify-content: center;
 }
 
 
 .divLogin{
     display: block;
-    margin: 15px 5px;
+   
 }
 
 .boasVindas{
     font-weight: bolder;
-}
+    margin: 0px 2px 0 2px;
+}   
 
 .entre{
     text-align: left;
     font-weight: bolder;
-
+    margin: 0px 2px 0 2px;
 }
 
 
@@ -63,6 +64,11 @@
 .item a{
     text-decoration: none;
 }
+
+.item img{
+    height: 31px;
+}
+
 
 .search{
     height: 40px;

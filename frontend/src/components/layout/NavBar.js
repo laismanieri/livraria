@@ -70,10 +70,10 @@ function NavBar() {
                     </form>
                     </li> 
                     <Usuario/>
-                        <li className={styles.item} >
-                    <Link to="/carrinho">
-                        <img src="./img/compra.png" alt="ícone sacola" />
-                    </Link>
+                    <li className={styles.item} >
+                        <Link to="/carrinho">
+                            <img src="./img/compra.png" alt="ícone sacola" />
+                        </Link>
                     </li >
                 </ul>
             </Container>

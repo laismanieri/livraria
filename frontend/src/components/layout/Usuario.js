@@ -5,7 +5,7 @@ function Usuario (){
 
     return (
         <div className={styles.loginUser}>
-                        <div>
+                        <div className={styles.divImgUser} >
                             <img className={styles.imgUser} title="Login" src="./img/perfil-de-usuario.png" alt="ícone de usuario"/>
                         </div>
                               
