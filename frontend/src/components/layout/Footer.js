@@ -1,11 +1,12 @@
 import {FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp} from 'react-icons/fa'
 import styles from './Footer.module.css'
+import { Link } from 'react-router-dom'
 
 
 function Footer() {
     return(
         <footer className={styles.footer}>
-            <a href="#faleConosco"><h1>Fale Conosco</h1></a>
+            <Link to="/Contact"><h1>Fale Conosco</h1></Link>
             
             <ul className={styles.socialList}>
                 <li>
