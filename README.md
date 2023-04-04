@@ -1,21 +1,16 @@
 <p align="center">
-      <a href="https://github.com/laismanieri/livraria/commits/main">
-        <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20September%202022-yellow">
-      </a>
       <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellowgreen"/>
-      <a href="https://github.com/laismanieri">
-		<img alt="Feito por Lais Manieri" src="https://img.shields.io/badge/feito%20por-laismanieri-yellow">
-	  <a href="https://github.com/Jessica-Catherine">
-		<img alt="Feito por Jessica Catherine" src="https://img.shields.io/badge/feito%20por-Jessica-Catherine-pink">
+      	<a href="https://github.com/laismanieri">
+		<img alt="Feito por Lais Manieri" src="https://img.shields.io/badge/feito%20por-LaisManieri-yellow">
+      	<a href="https://github.com/Jessica-Catherine">
+		<img alt="Feito por Lais Manieri" src="https://img.shields.io/badge/feito%20por-JessicaCatherine-pink">
 	  <a href="https://github.com/Gabriel-Silvano">
-		<img alt="Feito por Gabriel Silvano" src="https://img.shields.io/badge/feito%20por-Gabriel-Silvano-blue">
+		<img alt="Feito por Gabriel Silvano" src="https://img.shields.io/badge/feito%20por-GabrielSilvano-blue">
 	  <a href="https://github.com/EduardoCorreaV">
-		<img alt="Feito por Eduardo Correa" src="https://img.shields.io/badge/feito%20por-EduardoCorreaV-orange">
+		<img alt="Feito por Eduardo Correa" src="https://img.shields.io/badge/feito%20por-EduardoCorrea-orange">
 	  <a href="https://github.com/dombski">
-		<img alt="Feito por Gustavo Dombski" src="https://img.shields.io/badge/feito%20por-dombski-green">
+		<img alt="Feito por Gustavo Dombski" src="https://img.shields.io/badge/feito%20por-Dombski-green">
         
-      <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20April%202023-yellowgreen">
-      <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20Livraria-yellowgreen">
 </p>
 
 # <h1 align="center">  ![senai-logo](https://user-images.githubusercontent.com/82177551/204321789-9db83488-fb05-4ffd-aa31-d08f02617815.jpg) <br> Projeto Livraria <br> Squad Binários</h1>
@@ -119,11 +114,8 @@
 
 Frontend e Backend
 
- [<img src="https://avatars.githubusercontent.com/u/82177551?s=96&v=4" width=115><br><sub>Lais Manieri</sub>](https://github.com/laismanieri) 
-  [<img src="https://avatars.githubusercontent.com/u/104799463?v=4" width=115><br><sub>Jessica Catherine</sub>](https://github.com/Jessica-Catherine) 
-   [<img src="https://avatars.githubusercontent.com/u/84875270?v=4" width=115><br><sub>Gabriel Silvano</sub>](https://github.com/Gabriel-Silvano) 
-    [<img src="https://avatars.githubusercontent.com/u/102261741?v=4" width=115><br><sub>Eduardo Correa</sub>](https://github.com/EduardoCorreaV) 
-	 [<img src="https://avatars.githubusercontent.com/u/101436454?v=4" width=115><br><sub>Gustavo Dombski</sub>](https://github.com/dombski) 
+| [<img src="https://avatars.githubusercontent.com/u/82177551?s=96&v=4" width=115><br><sub>Lais Manieri</sub>](https://github.com/laismanieri)| [<img src="https://avatars.githubusercontent.com/u/104799463?v=4" width=115><br><sub>Jessica Catherine</sub>](https://github.com/Jessica-Catherine)| [<img src="https://avatars.githubusercontent.com/u/84875270?v=4" width=115><br><sub>Gabriel Silvano</sub>](https://github.com/Gabriel-Silvano)| [<img src="https://avatars.githubusercontent.com/u/102261741?v=4" width=115><br><sub>Eduardo Correa</sub>](https://github.com/EduardoCorreaV)| [<img src="https://avatars.githubusercontent.com/u/101436454?v=4" width=115><br><sub>Gustavo Dombski</sub>](https://github.com/dombski)|
+| :---: | :---: | :---: | :---: | :---: |
 
   
 
