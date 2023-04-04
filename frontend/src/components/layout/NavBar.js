@@ -129,6 +129,11 @@ function NavBar() {
                                     imagem={livro.imagem}
                                     nome={livro.nome}
                                     preco={livro.preco}
+                                    autor={livro.autor}
+                                    descricao={livro.descricao}
+                                    anoDePublicacao={livro.anoDePublicacao}
+                                    editora={livro.editora}
+                                    genero={livro.genero}
                                 />
                                 );
                 }

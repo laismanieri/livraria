@@ -28,7 +28,15 @@ function ListaLivro() {
                 {
                     cards.map((livro, index) => {
                         return (
-                           <Card key={index} imagem={livro.imagem} nome={livro.nome} preco={livro.preco}/>
+                           <Card key={index} 
+                           imagem={livro.imagem} 
+                           nome={livro.nome} 
+                           preco={livro.preco}
+                           editora={livro.editora}
+                           autor={livro.autor}
+                           anoDePublicacao={livro.anoDePublicacao}
+                           genero={livro.genero}
+                           descricao={livro.descricao}/>
                         )
                     })
                 }
