@@ -80,13 +80,20 @@ public class LivroDAO {
 
 		return result;		
 	}
+	
+	public void criarLista(List<Livro> livros) {
+	    for (Livro livro : livros) {
+	        Novo(livro);
+	    }
+	}
+
 
 	public int Editar(Livro a, int idLivro) {
 		String sql = "UPDATE LIVRO SET ANODEPUBLICACAO=?, PRECO=?, NOME=?, AUTOR=?, GENERO=?, EDITORA=?, QTDESTOQUE=?, DESCRICAO=?, IMAGEM=?, QTDPAGINA=?, OFERTA=?, DESTAQUE=?, PRECOOFERTA=?  "
 				+ "WHERE IDLIVRO =?";
 		Object[] params = { a.getAnoDePublicacao(), a.getPreco(), a.getNome(), a.getAutor(), a.getGenero(),
-				a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta() };
-		int result = jdbcTemplate.update(sql, params, idLivro);
+				a.getEditora(), a.getQtdEstoque(), a.getDescricao(), a.getImagem(), a.getQtdPagina(), a.isOferta(), a.isDestaque(), a.getPrecoOferta(), idLivro };
+		int result = jdbcTemplate.update(sql, params);
 		return result;
 	}
 
@@ -94,7 +101,7 @@ public class LivroDAO {
 		String sql = "DELETE FROM LIVRO "
 				+ "WHERE IDLIVRO =?";
 		Object[] params = { idLivro };
-		int result = jdbcTemplate.update(sql, params, idLivro);
+		int result = jdbcTemplate.update(sql, params);
 		return result;
 	}
 }

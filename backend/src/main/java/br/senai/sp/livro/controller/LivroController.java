@@ -3,6 +3,7 @@ package br.senai.sp.livro.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +39,14 @@ public class LivroController {
 		return a;
 	}
 
+	
+	@PostMapping("/livros")
+	public ResponseEntity<String> criarListaLivros(@RequestBody List<Livro> livros) {
+	    dao.criarLista(livros);
+	    return ResponseEntity.ok("Livros criados com sucesso");
+	}
+
+	
 	@PutMapping("/{idLivro}")
 	public Livro alterar(@RequestBody Livro livro, @PathVariable int idLivro) {
 		dao.Editar(livro, idLivro);
