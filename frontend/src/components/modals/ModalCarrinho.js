@@ -34,32 +34,29 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                             <img className={styles.imagem} src={imagem} alt={nome}/>
                         </div>
                         <div className={styles.gridListaInfo}>
-                            <div>
-                                <ul className={styles.listaItemUl}>
-                                    <li className={styles.gridInfo}>
-                                        <h1 className={styles.tituloItem} >
-                                        {nome}
-                                        </h1>
-                                    </li>
-                                    <li className={styles.gridInfo}>
-                                        <button className={styles.navBarCarrinhoButton}> 
-                                            <img className={styles.imgFechar} src="./img/cancelar.png" alt="ícone sacola" />
-                                        </button>
-                                    </li>                           <li className={styles.gridInfo}>
-                                        <h1 className={styles.preco}>
+                            <div className={styles.gridInfo}>
+                                <h1 className={styles.tituloItem} >
+                                    {nome}
+                                </h1>
+                            <div className={styles.gridInfo}>
+                                <button className={styles.navBarCarrinhoButton}> 
+                                    <img className={styles.imgFechar} src="./img/cancelar.png" alt="ícone sacola" />
+                                </button>
+                            </div>                           
+                            <div className={styles.gridInfo}>
+                                <h1 className={styles.preco}>
                                        R$ {preco}
-                                        </h1>
-                                    </li>
-                                    <li className={styles.gridInfo}>
-                                        <div>
-                                            <h1>
-                                                1
-                                            </h1>
-                                        </div>    
-
-                                    </li>
-                                </ul>
+                                </h1>
                             </div>
+                            <div className={styles.gridInfo}>
+                                <div>
+                                    <h1>
+                                        1
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
                         </div>
                     </div>
                 </div>
