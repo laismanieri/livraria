@@ -17,6 +17,7 @@ function NavBar() {
   const [showHomeContainer, setShowHomeContainer] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [totalResults, setTotalResults] = useState([]);
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
@@ -41,6 +42,7 @@ function NavBar() {
           isOferta: livro.oferta === true         }));
         setSearchResults(filteredData);
         setShowHomeContainer(false);
+        setTotalResults(filteredData.length);
       } else {
         console.error('Os dados não são um array', data);
       }
@@ -100,11 +102,15 @@ function NavBar() {
             )}
             {!showHomeContainer && (
                 <>
-                    <section className={styles.tituloResultadoContainer}>
-                    <h2 className={styles.destaque} >
-                        Resultado da busca...
-                    </h2>
-                </section>
+                        <section className={styles.tituloResultadoContainer}>
+                        <h2 className={styles.resultadoBusca} >
+                        Exibindo resultados para: {searchTerm}
+                        </h2>
+
+                        <h2 className={styles.resultadoCount}>{totalResults} livros encontrados
+                        </h2>
+                        <div className={styles.linhaHorizontal}></div>
+                    </section>
 
                 <section className={styles.resultadoContainer}>
                

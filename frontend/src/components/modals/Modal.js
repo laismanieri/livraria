@@ -1,13 +1,13 @@
 import styles from '../modals/Modal.module.css';
 import {Link} from 'react-router-dom';
 
-function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, ano, editora, genero, anoDePublicacao }) {
+function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
     return (
       <>
         {isOpen && (
             <div className={styles.modal}>
                 <div className={styles.container}>
-                <div className={styles.gridContainer}>
+                    <div className={styles.gridContainer}>
                         <div className={styles.gridItemLong}>
                             <img className={styles.imagem} src={imagem} alt={nome}/>
                         </div>

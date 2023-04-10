@@ -1,0 +1,165 @@
+
+.modalBackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+
+
+.modalCarrinho {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    background: whitesmoke;
+    text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
+    background: whitesmoke;
+  }
+  
+  
+.navBarCarrinho{
+  background:  #033579;
+  width: 100%;
+  height: 7%;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imgSacola{
+  width: 100%;
+  justify-content: center;
+}
+
+
+.navBarCarrinhoUl{
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.sacolaH1{
+  margin: 8px 0 0 10px;
+  color: aliceblue;
+  font-size: 18px;
+}  
+
+.navBarCarrinhoButton{
+  border:none;
+  background-color:transparent;
+  cursor: pointer;
+  /* opacity: 0.8; */
+}
+
+.listaItemCarrinho{
+  width: 100%;
+  height:78%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.totalCarrinho{
+  background:  #033579;
+  width: 100%;
+  height:15%;
+  justify-content: center;
+}
+
+.valorCarrinho{
+  width: 100%;
+  height:15%;
+  padding: 1.5em;
+}
+
+
+.carrinhoButtonComprar{
+  width: 100%;
+  height: 2em;
+  text-align: center;  
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  color: #146b97;  
+}
+
+
+
+.carrinhoButtonComprar:hover{
+  cursor: pointer;
+  background: rgb(192, 225, 255);
+  text-decoration: none;
+  color: rgb(255, 255, 255)
+}
+
+
+.valorSubtotal, .valorTotal{
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  color: rgb(192, 225, 255);
+  border-radius: 10px;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.valorTotal{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+span{
+  margin: 15px;
+
+}
+
+.containerLista {
+  display: grid;
+  grid-template-columns: 5em 14em;
+  grid-template-rows: 8em;
+  padding: 10px;
+  color: #146b97;  
+}
+
+.gridListaInfo {
+  padding: 0px;
+  font-size: 30px;
+  text-align: center;
+  color: #146b97;  
+}
+
+.listaItemUl{
+  display: grid;
+  grid-template-columns: 4em 4em;
+  grid-template-rows: 2em 2em;
+  padding: 0;
+  margin: 0;
+  color: #146b97;  
+}
+
+.gridInfo {
+  padding: auto;
+  font-size: 10px;
+  text-align: center;
+  color: #146b97;  
+}
+
+
+.tituloItem{
+  margin: 0;
+  color: #146b97; 
+  font-size: 18px;
+} 

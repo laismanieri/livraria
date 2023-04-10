@@ -20,7 +20,7 @@ export default function Carrossel() {
         <Carousel.Item interval={800}>
           <img
             className="d-block w-100"
-            src="./img/castelo.png" alt=""/>
+            src="https://static3.tcdn.com.br/img/img_prod/825130/1679926150_willow_acredita_que_a_unica_maneira_de.png" alt=""/>
           <Carousel.Caption>
             {/* <h3>Label for first slide</h3>
             <p>Sample Text for Image One</p> */}
@@ -29,7 +29,7 @@ export default function Carrossel() {
         <Carousel.Item interval={800}>
           <img
             className="d-block w-100"
-            src="./img/mulheres.png" alt=""/>
+            src="https://static3.tcdn.com.br/img/img_prod/825130/1677870219_um_estranho_nos.png" alt=""/>
           <Carousel.Caption>
             {/* <h3>Label for second slide</h3>
             <p>Sample Text for Image Two</p> */}
@@ -38,7 +38,7 @@ export default function Carrossel() {
         <Carousel.Item interval={800}>
           <img
             className="d-block w-100"
-            src="./img/mais-vendida.png" alt=""/>
+            src="https://static3.tcdn.com.br/img/img_prod/825130/1677706919_banner_trs_mulheres._trs_datas._um_homem_desaparecido.png" alt=""/>
           <Carousel.Caption>
             {/* <h3>Label for second slide</h3>
             <p>Sample Text for Image Two</p> */}
@@ -47,7 +47,7 @@ export default function Carrossel() {
         <Carousel.Item interval={800}>
           <img
             className="d-block w-100"
-            src="./img/lancamentos.png" alt=""/>
+            src="https://static3.tcdn.com.br/img/img_prod/825130/1677848614_existe_aquele_momento_em_que_voc_termina_um_livro_realmente_incrvel_e_s_precisa_de_um_segundo_para_respirar_fundo_e_absorver_todos_os_seus_sentimentos.__to_mas_to_bom_que_voc_no_consegue_expressar_c.png" alt=""/>
           <Carousel.Caption>
             {/* <h3>Label for second slide</h3>
             <p>Sample Text for Image Two</p> */}

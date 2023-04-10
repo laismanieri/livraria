@@ -1,7 +1,7 @@
 import {FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp} from 'react-icons/fa'
 import styles from './Footer.module.css'
 import { Link } from 'react-router-dom'
-import Container from './Container'
+
 
 
 function Footer() {
