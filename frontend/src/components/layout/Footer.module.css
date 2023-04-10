@@ -1,11 +1,26 @@
 .footer {
-    background: #033579;
     color: #ffffff;
-    padding: 2em;
+    padding: 0;
     text-align: center;
+    margin: 0;
     margin-top: 100px;
     /* position: relative;
     z-index: 99999; */
+}
+
+.socialListFooterDiv{
+    padding: 1em;
+    margin: 0;
+    background: #033579;
+}
+
+
+.socialListFooter{
+    display:flex;
+    list-style-type: none;
+    text-decoration: none;
+    justify-content: space-around;
+
 }
 
 .socialList{
@@ -13,34 +28,86 @@
     justify-content: center;
     list-style-type: none;
     text-decoration: none;
-}
-
-.socialList li{
-    margin: 0 1em;
-    font-size: 1.7em;
+    text-align: center;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
-.socialList li:hover{
+
+.footerLogo{
+    width: 4%;
+}
+
+.socialListLi:hover{
     color:rgb(144, 202, 252);
 
 }
 
-.footer p{
-    font-size: 1em;
-    font-weight: bold;
+.socialListLi{
+    margin: 2% 15% 2% 15%;
+    font-size: 1.5em;   
 }
 
-.footer h1{
-    font-size: 1em;
+
+.footerFaleConosco{
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 1em;
-    font-size: 20px;
     color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+
 }
 
-.footer h1:hover{
+.footerFaleConosco:hover{
     color:rgb(144, 202, 252);
+
 }
 
 a:link {text-decoration: none;}
+
+.footerPagamento{
+
+    background: #03347997;
+    padding: 1em;
+}
+
+.footerPagamentoH1{
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.pagamentoListDiv {
+    margin: 0 35% 0 35%;
+    padding: 1em;
+
+} 
+
+.pagamentoList {
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0;
+}
+
+
+.footerCopy{
+
+    /* background: #03347948; */
+    padding: 1em;
+    background: #03347997;
+}
+
+.footerCopyP{
+    color: #033579;
+    font-size: large;
+    color: #ffffffc4 ;
+    margin: 0;    
+    margin-bottom: 20px;
+}
