@@ -53,23 +53,23 @@ public class LivroDAO {
 	public Livro[] buscarPorValor(String valor) {
 	    String sql = "SELECT ANODEPUBLICACAO, NOME, AUTOR, GENERO, EDITORA "
 	            + "FROM LIVRO "
-	            + "WHERE ANODEPUBLICACAO like '%" + valor + "%'"
-	            + "OR NOME like '%" + valor + "%'"
-	            + "OR AUTOR like '%" + valor + "%'"
-	            + "OR GENERO like '%" + valor + "%'"
-	            + "OR EDITORA like '%" + valor + "%'";
+	            + "WHERE ANODEPUBLICACAO like ? "
+	            + "OR NOME like ? "
+	            + "OR AUTOR like ? "
+	            + "OR GENERO like ? "
+	            + "OR EDITORA like ?";
 
-	    Object[] params = { valor };
-	    List<Livro> livros = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class), params);
+	    List<Livro> livros = jdbcTemplate.query(sql, ps -> {
+	        ps.setString(1, "%" + valor + "%");
+	        ps.setString(2, "%" + valor + "%");
+	        ps.setString(3, "%" + valor + "%");
+	        ps.setString(4, "%" + valor + "%");
+	        ps.setString(5, "%" + valor + "%");
+	    }, BeanPropertyRowMapper.newInstance(Livro.class));
 
-	    Livro[] arrayLivros = new Livro[livros.size()]; // cria um array do tamanho da lista
-
-	    for (int i = 0; i < livros.size(); i++) {
-	        arrayLivros[i] = livros.get(i); // adiciona cada elemento da lista no array
-	    }
-
-	    return arrayLivros;
+	    return livros.toArray(new Livro[0]);
 	}
+
 
 	public int Novo(Livro a) {
 
