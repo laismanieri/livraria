@@ -1,8 +1,21 @@
 import styles from '../modals/ModalCarousel.module.css';
-import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import ModalCarrinho from './ModalCarrinho';
 
 function ModalCarousel({ isOpen, onClose, book }) {
     const { imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta } = book || {};
+
+    const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
+  
+    const handleOpenModalCarrinho = () => {
+      setModalCarrinhoOpen(true);
+    };
+    
+    const handleCloseModalCarrinho = () => {
+      setModalCarrinhoOpen(false);
+    };
+    
+
     return (
       <>
         {isOpen && (
@@ -38,11 +51,9 @@ function ModalCarousel({ isOpen, onClose, book }) {
                                        R$ {precoOferta}
                                     </h1>
                                 </div>
-                                <Link to='/carrinho' >
-                                    <button className={styles.button}>                      
+                                <button className={styles.button} onClick={handleOpenModalCarrinho}>                      
                                         Adicionar à sacola                 
                                     </button>
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -97,6 +108,20 @@ function ModalCarousel({ isOpen, onClose, book }) {
                         </div>
                     </div>
                 </div>
+                <ModalCarrinho
+                isOpen={modalCarrinhoOpen}
+                onClose={handleCloseModalCarrinho}
+                imagem={imagem}
+                nome={nome}
+                preco={preco}
+                autor={autor}
+                descricao={descricao}
+                anoDePublicacao={anoDePublicacao}
+                editora={editora}
+                genero={genero}
+                precoOferta={precoOferta}
+    />
+
             </div>
         )}
       </>

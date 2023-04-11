@@ -12,7 +12,7 @@ export default function Carrossel() {
         padding: 30, 
         // color: '#015a80',   
         fontFamily: 'Open Sans', 
-        margin: '10px 0 0 0',
+        margin: '120px 0 0 0',
         }
 
         }>

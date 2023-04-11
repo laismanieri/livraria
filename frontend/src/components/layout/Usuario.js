@@ -1,4 +1,4 @@
-import styles from './NavBar.module.css'
+import styles from '../pages/Home.module.css'
 import {Link} from 'react-router-dom'
 
 function Usuario (){

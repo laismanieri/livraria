@@ -1,5 +1,4 @@
 import "./CarouselCard.css";
-import { useState } from 'react';
 
 const CardOferta = ({ imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta, onClick }) => {    
 
@@ -10,7 +9,6 @@ const CardOferta = ({ imagem, nome, preco, autor, descricao, editora, genero, an
       <h2>{nome}</h2>
       <h3>R$ {preco}</h3>
       <p>R$ {precoOferta}</p>
-      <button className="button">Comprar</button>
     </div>
   );
 }

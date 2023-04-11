@@ -1,7 +1,22 @@
 import styles from '../modals/Modal.module.css';
-import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import ModalCarrinho from './ModalCarrinho';
 
-function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
+function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta }) {
+
+    const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
+  
+    const handleOpenModalCarrinho = () => {
+      setModalCarrinhoOpen(true);
+    };
+    
+    const handleCloseModalCarrinho = () => {
+      setModalCarrinhoOpen(false);
+    };
+    
+
+
+
     return (
       <>
         {isOpen && (
@@ -32,11 +47,9 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                                        R$ {preco}
                                     </h1>
                                 </div>
-                                <Link to='/carrinho' >
-                                    <button className={styles.button}>                      
+                                    <button className={styles.button} onClick={handleOpenModalCarrinho}>                      
                                         Adicionar à sacola                 
                                     </button>
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -91,6 +104,19 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                         </div>
                     </div>
                 </div>
+                <ModalCarrinho
+        isOpen={modalCarrinhoOpen}
+        onClose={handleCloseModalCarrinho}
+        imagem={imagem}
+        nome={nome}
+        preco={preco}
+        autor={autor}
+        descricao={descricao}
+        anoDePublicacao={anoDePublicacao}
+        editora={editora}
+        genero={genero}
+        precoOferta={precoOferta}
+    />
             </div>
         )}
       </>

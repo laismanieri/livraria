@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styles from './Card.module.css';
 import Modal from '../modals/Modal';
-import ModalCarrinho from '../modals/ModalCarrinho';
 
 function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
     
@@ -15,16 +14,7 @@ function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePub
     setModalOpen(false);
   };
 
-  const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
-  
-  const handleOpenModalCarrinho = () => {
-    setModalCarrinhoOpen(true);
-  };
-  
-  const handleCloseModalCarrinho = () => {
-    setModalCarrinhoOpen(false);
-  };
-  
+
   return (
     <div className={styles.divCard}>
       <div className={styles.row}>
@@ -38,7 +28,6 @@ function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePub
           <p className={styles.preco}>
             R$ {preco}
           </p>
-          <button className={styles.button} onClick={handleOpenModalCarrinho}>Comprar</button>
         </div>
       </div>
       
@@ -46,18 +35,6 @@ function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePub
       <Modal
         isOpen={modalOpen}
         onClose={handleCloseModal}
-        imagem={imagem}
-        nome={nome}
-        preco={preco}
-        autor={autor}
-        descricao={descricao}
-        anoDePublicacao={anoDePublicacao}
-        editora={editora}
-        genero={genero}
-    />
-          <ModalCarrinho
-        isOpen={modalCarrinhoOpen}
-        onClose={handleCloseModalCarrinho}
         imagem={imagem}
         nome={nome}
         preco={preco}
