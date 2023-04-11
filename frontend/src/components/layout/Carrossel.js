@@ -13,6 +13,7 @@ export default function Carrossel() {
         // color: '#015a80',   
         fontFamily: 'Open Sans', 
         margin: '120px 0 0 0',
+        zIndex: '-1'
         }
 
         }>

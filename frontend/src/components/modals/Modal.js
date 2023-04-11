@@ -47,8 +47,8 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                                        R$ {preco}
                                     </h1>
                                 </div>
-                                    <button className={styles.button} onClick={handleOpenModalCarrinho}>                      
-                                        Adicionar à sacola                 
+                                    <button className={styles.buttonAdicionarSacola} onClick={handleOpenModalCarrinho}>                      
+                                        <h1 className={styles.h1AdicionarSacola} >Adicionar à sacola</h1>                 
                                     </button>
                             </div>
                         </div>

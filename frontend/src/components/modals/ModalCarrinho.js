@@ -13,9 +13,6 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                 <div className={styles.navBarCarrinho}>
                     <ul className={styles.navBarCarrinhoUl}>
                         <li className={styles.navBarCarrinhoLi}>
-                            <FaShoppingBag className={styles.imgSacola} /> 
-                        </li>
-                        <li className={styles.navBarCarrinhoLi}>
                             <h1 className={styles.sacolaH1}>
                                 Minha Sacola
                             </h1> 

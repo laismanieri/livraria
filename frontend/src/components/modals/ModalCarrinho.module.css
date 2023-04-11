@@ -6,12 +6,12 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
+  z-index: 2000;
 }
 
 
 .modalCarrinho {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 25%;
@@ -19,10 +19,10 @@
     background-color: rgba(0, 0, 0, 0.811);
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 2001;
     background: whitesmoke;
     text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
-
+    margin-top: 4%;
   }
   
   
@@ -30,17 +30,17 @@
   background:  #033579;
   width: 100%;
   height: 7%;
-  top: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+
+
 }
 
 
 
 .navBarCarrinhoUl{
-  display: inline-flex;
-  margin: 0;
+  margin: 0 0 0 1em;
   padding: 0;
 }
 
@@ -50,9 +50,10 @@
   font-size: 18px;
 }  
 
-.imgFechar, .imgSacola{
+.imgFechar{
   color: rgba(240, 248, 255, 0.785);
   font-size: 1.5em;
+  margin: 0 1em 0 0;
 }
 
 .navBarCarrinhoButton{
@@ -64,7 +65,7 @@
 
 .listaItemCarrinho{
   width: 100%;
-  height:78%;
+  height:65%;
   display: flex;
   justify-content: space-around;
 }
@@ -73,13 +74,12 @@
 .totalCarrinho{
   background:  #033579;
   width: 100%;
-  height:15%;
+  height:50%;
   justify-content: center;
 }
 
 .valorCarrinho{
   width: 100%;
-  height:15%;
   padding: 1.5em;
 }
 
