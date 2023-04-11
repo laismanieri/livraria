@@ -1,18 +1,19 @@
 import styles from '../modals/ModalCarrinho.module.css';
-import { useEffect } from 'react';
+import {AiFillDelete, AiOutlineClose} from 'react-icons/ai';
+import { FaShoppingBag } from 'react-icons/fa';
 
 function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
 
     return (
       <>
         {isOpen && (
-            <div>
+        <div>
             <div className={styles.modalBackground} ></div>
             <div className={styles.modalCarrinho}>
                 <div className={styles.navBarCarrinho}>
                     <ul className={styles.navBarCarrinhoUl}>
                         <li className={styles.navBarCarrinhoLi}>
-                            <img className={styles.imgSacola} src="./img/compra.png" alt="ícone sacola" /> 
+                            <FaShoppingBag className={styles.imgSacola} /> 
                         </li>
                         <li className={styles.navBarCarrinhoLi}>
                             <h1 className={styles.sacolaH1}>
@@ -23,7 +24,7 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                     </ul>                        
                     <div >
                             <button className={styles.navBarCarrinhoButton} onClick={onClose}> 
-                                <img className={styles.imgFechar} src="./img/cancelar.png" alt="ícone sacola" />
+                                <AiOutlineClose className={styles.imgFechar} />
                             </button>
                     </div>
                     
@@ -38,9 +39,10 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                                 <h1 className={styles.tituloItem} >
                                     {nome}
                                 </h1>
+                            </div>    
                             <div className={styles.gridInfo}>
-                                <button className={styles.navBarCarrinhoButton}> 
-                                    <img className={styles.imgFechar} src="./img/cancelar.png" alt="ícone sacola" />
+                                <button className={styles.imgExcluirItemCarrinho}> 
+                                    <AiFillDelete/>
                                 </button>
                             </div>                           
                             <div className={styles.gridInfo}>
@@ -56,7 +58,6 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                                 </div>
                             </div>
 
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -86,7 +87,8 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                                     R$ valor
                                 </span>
                             </li>
-                        </ul>                        <button className={styles.carrinhoButtonComprar}>
+                        </ul>                        
+                            <button className={styles.carrinhoButtonComprar}>
                             Comprar
                         </button>
                     </div>
