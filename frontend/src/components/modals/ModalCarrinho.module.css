@@ -183,7 +183,14 @@ span{
   text-decoration: line-through;
   margin: 0;
 } */
+.hasOffer {
+  color: rgba(236, 34, 34, 0.788);
+  text-decoration: line-through;
+}
 
+.noOffer {
+  color: #146b97; 
+}
 
 .preco, .precoOferta, .quantidadeLivro{
   color: #146b97; 

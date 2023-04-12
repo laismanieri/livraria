@@ -15,7 +15,6 @@ function ModalCarrinho({
   anoDePublicacao,
   precoOferta,
   quantidade,
-  carrinho,
 }) {
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(quantidade);
 
@@ -28,6 +27,7 @@ function ModalCarrinho({
       setQuantidadeCarrinho(quantidadeCarrinho - 1);
     }
   };
+
 
   return (
     <>
@@ -65,19 +65,19 @@ function ModalCarrinho({
                     </button>
                   </div>
                   <div className={styles.gridInfo}>
-                    <div className={styles.gridInfo}>
-                      <h1 className={styles.precoRegular}>
-                        <span>R$</span> {preco.toFixed(2)}
-                      </h1>
-                    </div>
-                    {precoOferta && (
-                      <div className={styles.gridInfo}>
-                        <h1 className={styles.precoOferta}>
-                          <span>R$</span> {precoOferta.toFixed(2)}
-                        </h1>
-                      </div>
-                    )}
-                  </div>
+  <div className={styles.gridInfo}>
+    <h1 className={`${styles.precoRegular} ${precoOferta ? styles.hasOffer : styles.noOffer}`}>
+      <span>R$</span> {preco.toFixed(2)}
+    </h1>
+  </div>
+  {precoOferta && (
+    <div className={styles.gridInfo}>
+      <h1 className={styles.noOffer}>
+        <span>R$</span> {precoOferta.toFixed(2)}
+      </h1>
+    </div>
+  )}
+</div>
                   <div className={styles.qtde}>
                     <button
                       onClick={handleDecrementQuantidadeCarrinho}
