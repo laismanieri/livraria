@@ -1,6 +1,7 @@
 import styles from "../modals/ModalCarousel.module.css";
 import { useState } from "react";
 import ModalCarrinho from "./ModalCarrinho";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 function ModalCarousel({ isOpen, onClose, book }) {
   const {
@@ -41,6 +42,8 @@ function ModalCarousel({ isOpen, onClose, book }) {
       {isOpen && (
         <div className={styles.modal}>
           <div className={styles.container}>
+          <span className={styles.close} onClick={onClose}><AiOutlineArrowLeft/>Voltar</span>
+
             <div className={styles.gridContainer}>
               <div className={styles.gridItemLong}>
                 <img className={styles.imagem} src={imagem} alt={nome} />
@@ -70,7 +73,7 @@ function ModalCarousel({ isOpen, onClose, book }) {
                       >
                         -
                       </button>
-                      <span>{quantidade}</span>
+                      <span className={styles.spanQtde}>{quantidade}</span>
                       <button
                         onClick={handleIncrementQuantidade}
                         className={styles.buttonQtde}

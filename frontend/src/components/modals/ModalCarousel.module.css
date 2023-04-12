@@ -116,6 +116,20 @@
 
 }
 
+.close{
+  color: #146b97; 
+  cursor: pointer;
+}
+
+.spanQtde {
+  max-width: 3rem; 
+  padding: 0.1rem 0.9rem; 
+  background-color: rgb(242, 244, 246);
+  border-radius: 5px; 
+  color: #146b97; 
+}
+
+
 .descontoCompra{
   width:10%;
   position: relative;

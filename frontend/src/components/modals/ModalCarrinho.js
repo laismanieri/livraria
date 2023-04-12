@@ -1,5 +1,5 @@
 import styles from "../modals/ModalCarrinho.module.css";
-import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
+import { AiFillDelete, AiOutlineClose, } from "react-icons/ai";
 import { useState } from "react";
 
 function ModalCarrinho({

@@ -1,6 +1,7 @@
 import styles from '../modals/Modal.module.css';
 import { useState } from 'react';
 import ModalCarrinho from './ModalCarrinho';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta }) {
 
@@ -48,7 +49,7 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                 <div className={styles.modal}>
 
                     <div className={styles.container}>
-                    <span className="close" onClick={onClose}>Voltar</span>
+                    <span className={styles.close} onClick={onClose}><AiOutlineArrowLeft/>Voltar</span>
                         <div className={styles.gridContainer}>
                             <div className={styles.gridItemLong}>
                                 <img className={styles.imagem} src={imagem} alt={nome}/>
@@ -78,7 +79,7 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                                         </div>
                                         <div className={styles.qtde}>
                                             <button onClick={handleDecrementQuantidade} className={styles.buttonQtde}>-</button>
-                                                <span>{quantidade}</span>
+                                                <span className={styles.spanQtde}>{quantidade}</span>
                                             <button onClick={handleIncrementQuantidade} className={styles.buttonQtde}>+</button>
                                         </div>
                                     </div>

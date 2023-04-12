@@ -17,6 +17,7 @@
   }
   
   
+  
 .gridContainer {
   display: grid;
   grid-template-columns: 20em 30em 25em;
@@ -98,6 +99,18 @@
 
 }
 
+.spanQtde {
+  max-width: 3rem; 
+  padding: 0.1rem 0.9rem; 
+  background-color: rgb(242, 244, 246);
+  border-radius: 5px; 
+  color: #146b97; 
+}
+
+.close{
+  color: #146b97; 
+  cursor: pointer;
+}
 
 
 
