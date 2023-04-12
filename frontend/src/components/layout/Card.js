@@ -1,19 +1,26 @@
-import { useState } from 'react';
-import styles from './Card.module.css';
-import Modal from '../modals/Modal';
+import { useState } from "react";
+import styles from "./Card.module.css";
+import Modal from "../modals/Modal";
 
-function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
-    
+function Card({
+  imagem,
+  nome,
+  preco,
+  autor,
+  descricao,
+  editora,
+  genero,
+  anoDePublicacao,
+}) {
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   const handleOpenModal = () => {
     setModalOpen(true);
   };
-  
+
   const handleCloseModal = () => {
     setModalOpen(false);
   };
-
 
   return (
     <div className={styles.divCard}>
@@ -21,16 +28,12 @@ function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePub
         <div className={styles.card}>
           <img src={imagem} alt={nome} onClick={handleOpenModal} />
           <div className={styles.divTitulo}>
-            <p className={styles.titulo}>
-              {nome}
-            </p>
+            <p className={styles.titulo}>{nome}</p>
           </div>
-          <p className={styles.preco}>
-            R$ {preco}
-          </p>
+          <p className={styles.preco}>R$ {preco.toFixed(2)}</p>
         </div>
       </div>
-      
+
       {/* Modal */}
       <Modal
         isOpen={modalOpen}
@@ -43,7 +46,7 @@ function Card({ imagem, nome, preco, autor, descricao, editora, genero, anoDePub
         anoDePublicacao={anoDePublicacao}
         editora={editora}
         genero={genero}
-    />
+      />
     </div>
   );
 }

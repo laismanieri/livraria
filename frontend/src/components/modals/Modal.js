@@ -73,7 +73,7 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                                     <div className={styles.compra}>
                                         <div className={styles.preco}>
                                             <h1 className={styles.preco}>
-                                            R$ {preco}
+                                            R$ {preco.toFixed(2)}
                                             </h1>
                                         </div>
                                         <div className={styles.qtde}>
@@ -156,8 +156,8 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                 anoDePublicacao={anoDePublicacao}
                 editora={editora}
                 genero={genero}
-                precoOferta={parseInt(quantidade)}
-                quantidade={parseInt(quantidade)} // passa a quantidade para o componente ModalCarrinho
+                precoOferta={precoOferta}
+                quantidade={quantidade} // passa a quantidade para o componente ModalCarrinho
         />
       )}
 

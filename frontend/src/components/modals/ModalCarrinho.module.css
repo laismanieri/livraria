@@ -178,14 +178,14 @@ span{
   color: rgb(255, 255, 255)
 }
 
-.precoRegular{
+/* .precoRegular{
   color: rgba(236, 34, 34, 0.788);
   text-decoration: line-through;
   margin: 0;
-}
+} */
 
 
-.preco, .preOferta, .quantidadeLivro{
+.preco, .precoOferta, .quantidadeLivro{
   color: #146b97; 
   margin: 0;
 
