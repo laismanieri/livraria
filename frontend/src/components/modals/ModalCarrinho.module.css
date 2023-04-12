@@ -22,7 +22,7 @@
     z-index: 2001;
     background: whitesmoke;
     text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
-    margin-top: 4%;
+    margin-top: 2%;
   }
   
   
@@ -129,21 +129,20 @@ span{
 
 .containerLista {
   display: grid;
-  grid-template-columns: 5em 14em;
+  grid-template-columns: 6em 16em;
   grid-template-rows: 8em;
-  padding: 10px;
+  padding: 20px;
   color: #146b97;  
+  margin: 0;
 }
 
 .gridListaInfo {
   display: grid;
-  grid-template-columns: repeat(2, 8em);
-  grid-template-rows: 4em 4em;
-  padding: 0;
-  margin: 0;
+  grid-template-columns: repeat(2, 10em);
+  grid-template-rows: 4.5em 4.5em;
   color: #146b97;
   align-items: center;
-
+  margin: 0;
 }
 
 
@@ -153,7 +152,6 @@ span{
   color: #146b97;
   align-items: center;
   justify-content: center;
-
 }
 
 .tituloItem{
@@ -178,6 +176,19 @@ span{
   background: rgb(192, 225, 255);
   text-decoration: none;
   color: rgb(255, 255, 255)
+}
+
+.precoRegular{
+  color: rgba(236, 34, 34, 0.788);
+  text-decoration: line-through;
+  margin: 0;
+}
+
+
+.preco, .preOferta, .quantidadeLivro{
+  color: #146b97; 
+  margin: 0;
+
 }
 
 @media (min-width: 768px) {

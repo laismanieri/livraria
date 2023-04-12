@@ -57,7 +57,7 @@ function ModalCarousel({ isOpen, onClose, book }) {
                                             </h1>
                                         </div>
                                     <div className={styles.compra}>
-                                    <div className={styles.precoOferta}>
+                                        <div className={styles.precoOferta}>
                                             <h1 className={styles.precoOferta}>
                                             R$ {precoOferta}
                                             </h1>

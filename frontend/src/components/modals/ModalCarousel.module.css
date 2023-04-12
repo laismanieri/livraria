@@ -113,9 +113,16 @@
   font-weight: 700;
   margin: 0;
   font-size: 30px;
-  font-weight: 700;
+
 }
 
+.descontoCompra{
+  width:10%;
+  position: relative;
+  top: 18px;
+  right: 150px;
+  z-index: 1;
+}
 
 .buttonQtde{
   border: none;

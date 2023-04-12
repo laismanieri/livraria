@@ -2,7 +2,7 @@ import styles from '../modals/ModalCarrinho.module.css';
 import {AiFillDelete, AiOutlineClose} from 'react-icons/ai';
 
 
-function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, quantidade }) {
+function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, quantidade, precoOferta }) {
 
     return (
       <>
@@ -42,14 +42,24 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                                     <AiFillDelete/>
                                 </button>
                             </div>                           
-                            <div className={styles.gridInfo}>
+                            {precoOferta && preco !== precoOferta ? (
+                                <>
+                                    <h1 className={styles.precoRegular}>
+                                    R$ {preco.toFixed(2)}
+                                    </h1>
+                                    <h1 className={styles.precoOferta}>
+                                    R$ {precoOferta.toFixed(2)}
+                                    </h1>
+                                    </>
+                                ) : (
                                 <h1 className={styles.preco}>
-                                       R$ {preco}
+                                    R$ {preco.toFixed(2)}
                                 </h1>
-                            </div>
+                                )}
+                            
                             <div className={styles.gridInfo}>
-                                <div>
-                                    <h1>
+                            <div >
+                                    <h1 className={styles.quantidadeLivro}>
                                         Quantidade: {quantidade}
                                     </h1>
                                 </div>
