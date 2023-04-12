@@ -25,11 +25,30 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
         }
     };
 
+    const handleAddToCart = () => {
+        onClose({
+          imagem,
+          nome,
+          preco,
+          autor,
+          descricao,
+          editora,
+          genero,
+          anoDePublicacao,
+          precoOferta,
+          quantidade
+        });
+        setModalCarrinhoOpen(true);
+      };
+      
+
     return (
         <>
             {isOpen && (
                 <div className={styles.modal}>
+
                     <div className={styles.container}>
+                    <span className="close" onClick={onClose}>Voltar</span>
                         <div className={styles.gridContainer}>
                             <div className={styles.gridItemLong}>
                                 <img className={styles.imagem} src={imagem} alt={nome}/>
@@ -64,7 +83,7 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                                         </div>
                                     </div>
                                     <div >
-                                        <button className={styles.buttonCompra} onClick={handleOpenModalCarrinho}>                      
+                                        <button className={styles.buttonCompra} onClick={() => { handleAddToCart(); setModalCarrinhoOpen(true); }}>                      
                                             <h1 className={styles.h1AdicionarSacola} >Adicionar à sacola</h1>                 
                                         </button>
                                         <button className={styles.buttonAdicionarSacola} >                      
@@ -125,20 +144,23 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
                         </div>
                     </div>
                 </div>
+                {modalCarrinhoOpen && (
                 <ModalCarrinho
-        isOpen={modalCarrinhoOpen}
-        onClose={handleCloseModalCarrinho}
-        imagem={imagem}
-        nome={nome}
-        preco={preco}
-        autor={autor}
-        descricao={descricao}
-        anoDePublicacao={anoDePublicacao}
-        editora={editora}
-        genero={genero}
-        precoOferta={precoOferta}
-        quantidade={quantidade}
-    />
+                onClose={() => setModalCarrinhoOpen(false)}
+                isOpen={modalCarrinhoOpen}
+                imagem={imagem}
+                nome={nome}
+                preco={parseInt(preco)}
+                autor={autor}
+                descricao={descricao}
+                anoDePublicacao={anoDePublicacao}
+                editora={editora}
+                genero={genero}
+                precoOferta={parseInt(quantidade)}
+                quantidade={parseInt(quantidade)} // passa a quantidade para o componente ModalCarrinho
+        />
+      )}
+
             </div>
         )}
       </>

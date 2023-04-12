@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import  styles from "../pages/Home.module.css";
 import Usuario from "./Usuario";
 
+
 function NavBar() {
+
   
    return (
     <>
@@ -16,9 +18,9 @@ function NavBar() {
                 <ul className={styles.list}>                            
                     <Usuario/>
                     <li className={styles.item} >
-                        <Link to="/carrinho">
+                        <button >
                             <img src="./img/compra.png" alt="ícone sacola" />
-                        </Link>
+                        </button>
                     </li >
                 </ul>
             </Container>

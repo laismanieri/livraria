@@ -1,8 +1,24 @@
 import styles from '../modals/ModalCarrinho.module.css';
 import {AiFillDelete, AiOutlineClose} from 'react-icons/ai';
+import { useState } from 'react';
 
 
-function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, quantidade, precoOferta }) {
+function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta, quantidade, carrinho }) {
+
+    const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(quantidade);
+  
+    const handleIncrementQuantidadeCarrinho = () => {
+      setQuantidadeCarrinho(quantidadeCarrinho + 1);
+    };
+  
+    const handleDecrementQuantidadeCarrinho = () => {
+      if (quantidadeCarrinho > 1) {
+        setQuantidadeCarrinho(quantidadeCarrinho - 1);
+      }
+    };
+  
+
+    
 
     return (
       <>
@@ -41,30 +57,28 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                                 <button className={styles.imgExcluirItemCarrinho}> 
                                     <AiFillDelete/>
                                 </button>
-                            </div>                           
-                            {precoOferta && preco !== precoOferta ? (
-                                <>
-                                    <h1 className={styles.precoRegular}>
-                                    R$ {preco.toFixed(2)}
-                                    </h1>
-                                    <h1 className={styles.precoOferta}>
-                                    R$ {precoOferta.toFixed(2)}
-                                    </h1>
-                                    </>
-                                ) : (
-                                <h1 className={styles.preco}>
-                                    R$ {preco.toFixed(2)}
-                                </h1>
-                                )}
-                            
-                            <div className={styles.gridInfo}>
-                            <div >
-                                    <h1 className={styles.quantidadeLivro}>
-                                        Quantidade: {quantidade}
-                                    </h1>
-                                </div>
                             </div>
-
+                            <div className={styles.gridInfo}>                           
+                                {precoOferta ? (
+                                    <>
+                                        <h1 className={styles.precoRegular}>
+                                        R$ {preco.toFixed(2)}
+                                        </h1>
+                                        <h1 className={styles.precoOferta}>
+                                        R$ {precoOferta.toFixed(2)}
+                                        </h1>
+                                        </>
+                                    ) : (
+                                    <h1 className={styles.preco}>
+                                        R$ {preco.toFixed(2)}
+                                    </h1>
+                                )}
+                            </div>
+                    <div className={styles.qtde}>
+                      <button onClick={handleDecrementQuantidadeCarrinho} className={styles.buttonQtde}>-</button>
+                      <span>{quantidadeCarrinho}</span>
+                      <button onClick={handleIncrementQuantidadeCarrinho} className={styles.buttonQtde}>+</button>
+                    </div>           
                         </div>
                     </div>
                 </div>
