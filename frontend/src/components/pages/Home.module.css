@@ -27,8 +27,7 @@
   .pesquisaLivro {
     position: fixed; /* Mudança aqui */
     top: 10px; /* Ajuste essa posição para deixar a barra de pesquisa no lugar certo */
-    left: 700px;
-    width: 100%;
+    left: 35%;
     z-index: 99;
   }
 
@@ -86,7 +85,7 @@
 
 .search{
     height: 40px;
-    width: 595px;
+    width: 450px;
     background:white;
     border-radius: 7px;
     margin-right: 3em;
@@ -249,4 +248,14 @@ h4{
     text-overflow: ellipsis; /* Corte o texto que ultrapassar a altura */
   }
 
+  /* @media only screen and (max-width: 1500px) {
+    .pesquisaLivro {
+        left: 450px;
+      } 
+}
 
+@media only screen and (max-width: 1500px) {
+    .pesquisaLivro {
+        left: 450px;
+      } 
+} */

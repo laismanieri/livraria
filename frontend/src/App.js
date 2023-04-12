@@ -3,7 +3,6 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Carrinho from './components/pages/Carrinho';
 import Contact from './components/pages/Contact';
-// import Livro from './components/layout/Livro';
 import Cadastro from './components/pages/Cadastro';
 
 

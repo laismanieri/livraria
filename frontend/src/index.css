@@ -12,3 +12,8 @@ html, body, #root{
   background-color: #efefef;
   height: 100%;
 }
+
+.App{
+  max-width: 100%;
+  min-width: 1225px;
+}

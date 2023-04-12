@@ -1,6 +1,6 @@
 import styles from '../modals/ModalCarrinho.module.css';
 import {AiFillDelete, AiOutlineClose} from 'react-icons/ai';
-import { FaShoppingBag } from 'react-icons/fa';
+
 
 function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
 

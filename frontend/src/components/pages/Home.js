@@ -53,7 +53,7 @@ function Home(){
   }
 
   return (
-    <>
+    <div>
         <NavBar/>
         <div className={styles.pesquisaLivro}>
                 <div className={styles.list}>                            
@@ -135,9 +135,9 @@ function Home(){
 
             </>
             )}
-            </Container>
-            <Footer/>            
-        </>
+        </Container>
+        <Footer/>            
+    </div>
     )
 }
 
