@@ -179,3 +179,18 @@ span{
   text-decoration: none;
   color: rgb(255, 255, 255)
 }
+
+@media (min-width: 768px) {
+  .modalCarrinho {
+    width: 35%;
+    top: 2vw;
+
+  }
+}
+
+@media (min-width: 992px) {
+  .modalCarrinho {
+    width: 30%;
+    top: 2vw;
+  }
+}

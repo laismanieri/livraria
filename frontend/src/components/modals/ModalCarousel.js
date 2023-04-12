@@ -6,6 +6,7 @@ function ModalCarousel({ isOpen, onClose, book }) {
     const { imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta } = book || {};
 
     const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
+    const [quantidade, setQuantidade] = useState(1);
   
     const handleOpenModalCarrinho = () => {
       setModalCarrinhoOpen(true);
@@ -13,6 +14,16 @@ function ModalCarousel({ isOpen, onClose, book }) {
     
     const handleCloseModalCarrinho = () => {
       setModalCarrinhoOpen(false);
+    };
+
+    const handleIncrementQuantidade = () => {
+        setQuantidade(quantidade + 1);
+    };
+
+    const handleDecrementQuantidade = () => {
+        if (quantidade > 1) {
+            setQuantidade(quantidade - 1);
+        }
     };
     
 
@@ -39,23 +50,34 @@ function ModalCarousel({ isOpen, onClose, book }) {
                                 {descricao}
                             </p>
                         </div>
-                        <div className={styles.gridItemLong}>
-                            <div className={styles.compra}>
-                                <div>
-                                    <h1 className={styles.preco}>
-                                       R$ {preco}
-                                    </h1>
+                        <div className={styles.comprarLivros}>
+                                <div className={styles.divComprarLivros}>                                        <div className={styles.preco}>
+                                            <h1 className={styles.preco}>
+                                            R$ {preco}
+                                            </h1>
+                                        </div>
+                                    <div className={styles.compra}>
+                                    <div className={styles.precoOferta}>
+                                            <h1 className={styles.precoOferta}>
+                                            R$ {precoOferta}
+                                            </h1>
+                                        </div>
+                                        <div className={styles.qtde}>
+                                            <button onClick={handleDecrementQuantidade} className={styles.buttonQtde}>-</button>
+                                                <span>{quantidade}</span>
+                                            <button onClick={handleIncrementQuantidade} className={styles.buttonQtde}>+</button>
+                                        </div>
+                                    </div>
+                                    <div >
+                                        <button className={styles.buttonCompra} onClick={handleOpenModalCarrinho}>                      
+                                            <h1 className={styles.h1AdicionarSacola} >Adicionar à sacola</h1>                 
+                                        </button>
+                                        <button className={styles.buttonAdicionarSacola} >                      
+                                            <h1 className={styles.h1AdicionarSacola} >Comprar</h1>                 
+                                        </button>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h1 className={styles.precoOferta}>
-                                       R$ {precoOferta}
-                                    </h1>
-                                </div>
-                                <button className={styles.buttonAdicionarSacola} onClick={handleOpenModalCarrinho}>                      <h1 className={styles.h1AdicionarSacola}>
-                                        Adicionar à sacola  </h1>             
-                                    </button>
                             </div>
-                        </div>
                     </div>
                 <div className={styles.fichaTecnica}>
                         <h1 className={styles.fichaH1}>Ficha Técnica</h1>
@@ -120,6 +142,7 @@ function ModalCarousel({ isOpen, onClose, book }) {
                 editora={editora}
                 genero={genero}
                 precoOferta={precoOferta}
+                quantidade={quantidade}
     />
 
             </div>

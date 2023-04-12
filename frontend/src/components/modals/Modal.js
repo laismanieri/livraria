@@ -5,54 +5,75 @@ import ModalCarrinho from './ModalCarrinho';
 function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, precoOferta }) {
 
     const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
-  
+    const [quantidade, setQuantidade] = useState(1);
+
     const handleOpenModalCarrinho = () => {
-      setModalCarrinhoOpen(true);
+        setModalCarrinhoOpen(true);
     };
     
     const handleCloseModalCarrinho = () => {
-      setModalCarrinhoOpen(false);
+        setModalCarrinhoOpen(false);
     };
-    
 
+    const handleIncrementQuantidade = () => {
+        setQuantidade(quantidade + 1);
+    };
 
+    const handleDecrementQuantidade = () => {
+        if (quantidade > 1) {
+            setQuantidade(quantidade - 1);
+        }
+    };
 
     return (
-      <>
-        {isOpen && (
-            <div className={styles.modal}>
-                <div className={styles.container}>
-                    <div className={styles.gridContainer}>
-                        <div className={styles.gridItemLong}>
-                            <img className={styles.imagem} src={imagem} alt={nome}/>
-                        </div>
-                        <div className={styles.gridItemLong}>
-                            <h1 className={styles.titulo} >
-                                {nome}
-                            </h1>
-                            <p className={styles.autor}>
-                                {autor}
-                            </p>
-                            <p className={styles.editora}>
-                                {editora}
-                            </p>
-                            <p className={styles.descricao}>
-                                {descricao}
-                            </p>
-                        </div>
-                        <div className={styles.gridItemLong}>
-                            <div className={styles.compra}>
-                                <div className={styles.preco}>
-                                    <h1 className={styles.preco}>
-                                       R$ {preco}
-                                    </h1>
+        <>
+            {isOpen && (
+                <div className={styles.modal}>
+                    <div className={styles.container}>
+                        <div className={styles.gridContainer}>
+                            <div className={styles.gridItemLong}>
+                                <img className={styles.imagem} src={imagem} alt={nome}/>
+                            </div>
+                            <div className={styles.gridItemLong}>
+                                <h1 className={styles.titulo} >
+                                    {nome}
+                                </h1>
+                                <p className={styles.autor}>
+                                    {autor}
+                                </p>
+                                <p className={styles.editora}>
+                                    {editora}
+                                </p>
+                                <p className={styles.descricao}>
+                                    {descricao}
+                                </p>
+
+                            </div>
+                            <div className={styles.comprarLivros}>
+                                <div className={styles.divComprarLivros}>
+                                    <div className={styles.compra}>
+                                        <div className={styles.preco}>
+                                            <h1 className={styles.preco}>
+                                            R$ {preco}
+                                            </h1>
+                                        </div>
+                                        <div className={styles.qtde}>
+                                            <button onClick={handleDecrementQuantidade} className={styles.buttonQtde}>-</button>
+                                                <span>{quantidade}</span>
+                                            <button onClick={handleIncrementQuantidade} className={styles.buttonQtde}>+</button>
+                                        </div>
+                                    </div>
+                                    <div >
+                                        <button className={styles.buttonCompra} onClick={handleOpenModalCarrinho}>                      
+                                            <h1 className={styles.h1AdicionarSacola} >Adicionar à sacola</h1>                 
+                                        </button>
+                                        <button className={styles.buttonAdicionarSacola} >                      
+                                            <h1 className={styles.h1AdicionarSacola} >Comprar</h1>                 
+                                        </button>
+                                    </div>
                                 </div>
-                                    <button className={styles.buttonAdicionarSacola} onClick={handleOpenModalCarrinho}>                      
-                                        <h1 className={styles.h1AdicionarSacola} >Adicionar à sacola</h1>                 
-                                    </button>
                             </div>
                         </div>
-                    </div>
                 <div className={styles.fichaTecnica}>
                         <h1 className={styles.fichaH1}>Ficha Técnica</h1>
                         <div className={styles.ficha}>
@@ -116,6 +137,7 @@ function Modal({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora
         editora={editora}
         genero={genero}
         precoOferta={precoOferta}
+        quantidade={quantidade}
     />
             </div>
         )}

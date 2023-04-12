@@ -2,7 +2,7 @@ import styles from '../modals/ModalCarrinho.module.css';
 import {AiFillDelete, AiOutlineClose} from 'react-icons/ai';
 
 
-function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao }) {
+function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao, editora, genero, anoDePublicacao, quantidade }) {
 
     return (
       <>
@@ -50,7 +50,7 @@ function ModalCarrinho({ isOpen, onClose, imagem, nome, preco, autor, descricao,
                             <div className={styles.gridInfo}>
                                 <div>
                                     <h1>
-                                        1
+                                        Quantidade: {quantidade}
                                     </h1>
                                 </div>
                             </div>
