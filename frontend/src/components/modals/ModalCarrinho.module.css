@@ -129,29 +129,55 @@ span{
 
 .containerLista {
   display: grid;
-  grid-template-columns: 6em 16em;
-  grid-template-rows: 8em;
+  grid-template-columns: 6em 24em;
+  grid-template-rows: 9em;
   padding: 20px;
   color: #146b97;  
   margin: 0;
 }
 
-.gridListaInfo {
-  display: grid;
-  grid-template-columns: repeat(2, 10em);
-  grid-template-rows: repeat(3, 3em);
-  color: #146b97;
-  align-items: center;
-  margin: 0;
+
+
+
+.divComprarLivros{
+  background:rgba(205, 231, 255, 0.368);
+  border-radius: 0 8px 8px 0;
+  padding: 1em;
+  box-shadow: 0 2px 15px 2px rgba(1, 23, 61, 0.078);
 }
 
 
-.gridInfo {
-  font-size: 10px;
-  text-align: center;
-  color: #146b97;
+.compra {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+
+}
+
+.divPreco,
+.qtde {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  color: #146b97;
+  margin: 0;  
+  height: 2em;
+}
+
+.divNomeExcluir {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #146b97;
+  margin: 0;  
+  height: 3em;
+  justify-content: space-around;
+}
+
+.imagem{
+  box-shadow: 2px 2px 15px 0 rgba(1, 23, 61, 0.078);
+  border-radius: 8px 0 0 8px;
 }
 
 .tituloItem{
@@ -162,11 +188,13 @@ span{
 
 .imgExcluirItemCarrinho{
   text-align: center;  
-  font-size: 2em;
+  font-size: 1.3em;
   text-decoration: none;
   border: none;
   color: #146b97;  
-  background: whitesmoke;
+  margin: 0 10px 0 10px;
+  background:rgba(205, 231, 255, 0.368);
+
 }
 
 
@@ -179,21 +207,24 @@ span{
 }
 
 /* .precoRegular{
-  color: rgba(236, 34, 34, 0.788);
-  text-decoration: line-through;
-  margin: 0;
+
 } */
 .hasOffer {
   color: rgba(236, 34, 34, 0.788);
   text-decoration: line-through;
+  margin: 0;
+  font-size: 18px;
 }
 
 .noOffer {
   color: #146b97; 
+  margin: 0;
+  font-size: 18px;
 }
 
 .preco, .precoOferta{
   color: #146b97; 
+  margin: 0;
 
 }
 

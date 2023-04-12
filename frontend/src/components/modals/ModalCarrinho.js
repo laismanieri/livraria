@@ -55,46 +55,50 @@ function ModalCarrinho({
                   <img className={styles.imagem} src={imagem} alt={nome} />
                 </div>
                 <div className={styles.gridListaInfo}>
-                  <div className={styles.gridInfo}>
-                    <h1 className={styles.tituloItem}>{nome}</h1>
-                  </div>
-                  <div className={styles.gridInfo}>
-                    <button className={styles.imgExcluirItemCarrinho}>
-                      <AiFillDelete />
-                    </button>
-                  </div>
-                  <div className={styles.gridInfo}>
-                    <div className={styles.gridInfo}>
-                      <h1
-                        className={`${styles.precoRegular} ${
-                          precoOferta ? styles.hasOffer : styles.noOffer
-                        }`}
-                      >
-                        <span>R$</span> {preco.toFixed(2)}
-                      </h1>
-                    </div>
-                    {precoOferta && (
-                      <div className={styles.gridInfo}>
-                        <h1 className={styles.noOffer}>
-                          <span>R$</span> {precoOferta.toFixed(2)}
-                        </h1>
+                  <div className={styles.comprarLivros}>
+                    <div className={styles.divComprarLivros}>
+                      <div className={styles.divNomeExcluir}>
+                        <h1 className={styles.tituloItem}>{nome}</h1>
+                          <button className={styles.imgExcluirItemCarrinho}>
+                          <AiFillDelete />
+                        </button>
                       </div>
-                    )}
-                  </div>
-                  <div className={styles.qtde}>
-                    <button
-                      onClick={handleDecrementQuantidadeCarrinho}
-                      className={styles.buttonQtde}
-                    >
-                      -
-                    </button>
-                    <span className={styles.spanQtde}>{quantidadeCarrinho}</span>
-                    <button
-                      onClick={handleIncrementQuantidadeCarrinho}
-                      className={styles.buttonQtde}
-                    >
-                      +
-                    </button>
+                      <div className={styles.compra}>
+                        <div className={styles.divPreco}>
+                          <h1
+                            className={`${styles.precoRegular} ${
+                              precoOferta ? styles.hasOffer : styles.noOffer
+                            }`}
+                          >
+                            <span>R$</span> {preco.toFixed(2)}
+                          </h1>
+                        </div>
+                        {precoOferta && (
+                          <div className={styles.divPreco}>
+                            <h1 className={styles.noOffer}>
+                              <span>R$</span> {precoOferta.toFixed(2)}
+                            </h1>
+                          </div>
+                        )}
+                      </div>
+                      <div className={styles.qtde}>
+                        <button
+                          onClick={handleDecrementQuantidadeCarrinho}
+                          className={styles.buttonQtde}
+                        >
+                          -
+                        </button>
+                        <span className={styles.spanQtde}>
+                          {quantidadeCarrinho}
+                        </span>
+                        <button
+                          onClick={handleIncrementQuantidadeCarrinho}
+                          className={styles.buttonQtde}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
