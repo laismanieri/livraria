@@ -192,10 +192,26 @@ span{
   color: #146b97; 
 }
 
-.preco, .precoOferta, .quantidadeLivro{
+.preco, .precoOferta{
   color: #146b97; 
-  margin: 0;
 
+}
+
+
+.buttonQtde{
+  border: none;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #d2d2d27d;
+}
+
+.spanQtde {
+  max-width: 3rem; 
+  padding: 0.2rem 0.7rem; 
+  background-color: #dad9d9;
+  border-radius: 5px; 
+  color: #146b97; 
 }
 
 @media (min-width: 768px) {
