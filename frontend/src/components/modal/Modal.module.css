@@ -1,22 +1,16 @@
 
-
-.modal {
+.modalTelaCheia {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.811);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background: whitesmoke;
-  margin-top: 1%;
-  text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  }
+  
 
-}
-
+  
   
 .gridContainer {
   display: grid;
@@ -63,22 +57,6 @@
 
 }
 
-
-.precoOferta{
-  font-size: 30px;
-  color: #146b97;
-  font-weight: 700;
-}
-
-.preco{
-  margin-bottom: 25px;
-  font-size: 22px;
-  text-decoration: line-through;
-  color: rgb(255, 94, 94);
-  text-align: left;
-  margin-left: 50px;
-}
-
 .divComprarLivros{
   background:rgb(205, 231, 255);
   border-radius: 15px;
@@ -93,7 +71,7 @@
   align-items: center;
 }
 
-.precoOferta,
+.preco,
 .qtde {
   flex: 1;
   display: flex;
@@ -106,19 +84,13 @@
   font-weight: 700;
 }
 
-.preco {
-  display: flex;
-  align-items: center;
-  color: rgba(236, 34, 34, 0.788);
-  font-weight: 700;
-  margin: 0;
-  font-size: 30px;
 
-}
+.buttonQtde{
+  border: none;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
 
-.close{
-  color: #146b97; 
-  cursor: pointer;
 }
 
 .spanQtde {
@@ -129,22 +101,12 @@
   color: #146b97; 
 }
 
-
-.descontoCompra{
-  width:10%;
-  position: relative;
-  top: 18px;
-  right: 150px;
-  z-index: 1;
+.close{
+  color: #146b97; 
+  cursor: pointer;
 }
 
-.buttonQtde{
-  border: none;
-  width: 30px;
-  text-align: center;
-  border-radius: 5px;
 
-}
 
 .buttonAdicionarSacola, .buttonCompra{
   width: 100%;
@@ -158,17 +120,19 @@
 
 .h1AdicionarSacola{
   color: aliceblue;
-  font-size: 20px;
+  font-size: 12px;
   text-align: center;  
   font-weight: bold;
   margin: 0;
 }
 
-.buttonAdicionarSacola:hover{
+.buttonAdicionarSacola:hover, 
+.buttonCompra:hover{
   cursor: pointer;
   background: #3c67a4;
   text-decoration: none;
 }
+
 
 .ficha{
   border: solid 1px rgb(205, 231, 255);
@@ -195,10 +159,10 @@
 }
 
 .fichaH1{
-  text-align: left;
-  color: #146b97;
-  font-size: 1.5em;
-  margin-left: 0.2em;
+      text-align: left;
+      color: #146b97;
+      font-size: 1.5em;
+      margin-left: 0.2em;
 }
 
 

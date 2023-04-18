@@ -1,7 +1,10 @@
 import styles from "../layout/UsuarioLogin.module.css";
 import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
 function UsuarioLogin() {
   return (
     <div className={styles.loginUser}>
@@ -9,7 +12,11 @@ function UsuarioLogin() {
         <img
           className={styles.imgUser}
           title="Login"
+<<<<<<< HEAD
           src="/img/perfil-de-usuario.png"
+=======
+          src="./img/perfil-de-usuario.png"
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
           alt="ícone de usuário"
         />
       </div>

@@ -12,22 +12,39 @@
     align-items: center;
     z-index: 1;
     /* background: whitesmoke; */
+<<<<<<< HEAD
     margin-top: 13vh ;
     text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
   }
   
   .linhaHorizontal {
     width: 100%;
+=======
+    margin-top: 10vh ;
+    text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
+  }
+  
+  /* .linhaHorizontal {
+    width: 80%;
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
     border: 0.05px outset rgba(144, 202, 252, 0.26);
     margin-top: 2em;
     margin-bottom: 2em;
 }
+<<<<<<< HEAD
  
+=======
+  */
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
   
 .gridContainer {
   display: grid;
   grid-template-columns: 20em 30em 25em;
+<<<<<<< HEAD
   grid-template-rows: 24em;
+=======
+  grid-template-rows: 30em;
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
   padding: 10px;
   color: #146b97;  
 }
@@ -170,17 +187,24 @@
   background:rgb(192, 225, 255);
 }
 
+<<<<<<< HEAD
 .fichaH1, .voltarHome{
+=======
+.fichaH1{
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
       text-align: left;
       color: #146b97;
       font-size: 1.5em;
       margin-left: 0.2em;
+<<<<<<< HEAD
       margin-bottom: 0.5em;
 }
 
 .voltarHome{
   font-size: 1em;
 
+=======
+>>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
 }
 
 
