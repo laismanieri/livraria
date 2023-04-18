@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
 
 .modalBackground {
   position: fixed;
@@ -6,24 +11,24 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
+  z-index: 99;
+}
+
+.modalCarrinho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: whitesmoke;
+  margin: 0;
+
+  height: 100%;
 }
 
 
-.modalCarrinho {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 25%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.811);
-    justify-content: center;
-    align-items: center;
-    z-index: 2001;
-    background: whitesmoke;
-    text-shadow: 5px 5px 15px rgba(1, 23, 61, 0.22);
-    margin-top: 2%;
-  }
   
   
 .navBarCarrinho{
@@ -33,15 +38,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
+  text-decoration: none;
 }
 
 
 
 .navBarCarrinhoUl{
+  display: flex;
   margin: 0 0 0 1em;
   padding: 0;
+  list-style-type: none;
 }
 
 .sacolaH1{
@@ -65,16 +71,72 @@
 
 .listaItemCarrinho{
   width: 100%;
-  height:65%;
+  height:73%;
+
+}
+
+.containerLista {
+  display: grid;
+  grid-template-columns: 6.5em 24.5em;
+  grid-template-rows: 10em;
+  padding: 20px;
+  color: #146b97;  
+  margin: 0;
+  justify-content: center;
+}
+
+.divImg{
+  justify-content: center;
+
+}
+
+.imagemGrid{
+  box-shadow: 2px 2px 15px 0 rgba(1, 23, 61, 0.078);
+  border-radius: 8px 0 0 8px;
+  width: 100%;
+  height: 9em;
+}
+
+
+.containerListaInfo{
+  color: #146b97;
+}
+
+
+.divComprarLivros{
+  background:rgba(205, 231, 255, 0.368);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 15px 2px rgba(1, 23, 61, 0.078);
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1f 1f 1f;
+  grid-template-rows: 3em 3em 3em;
+}
+
+
+.divPreco,
+.qtde {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #146b97;
+
+}
+
+.divNomeExcluir {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #146b97;
   justify-content: space-around;
 }
+
 
 
 .totalCarrinho{
   background:  #033579;
   width: 100%;
-  height:50%;
+  height:20%;
   justify-content: center;
 }
 
@@ -127,58 +189,7 @@ span{
 
 }
 
-.containerLista {
-  display: grid;
-  grid-template-columns: 6em 24em;
-  grid-template-rows: 9em;
-  padding: 20px;
-  color: #146b97;  
-  margin: 0;
-}
 
-
-
-
-.divComprarLivros{
-  background:rgba(205, 231, 255, 0.368);
-  border-radius: 0 8px 8px 0;
-  padding: 1em;
-  box-shadow: 0 2px 15px 2px rgba(1, 23, 61, 0.078);
-}
-
-
-.compra {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-
-}
-
-.divPreco,
-.qtde {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #146b97;
-  margin: 0;  
-  height: 2em;
-}
-
-.divNomeExcluir {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #146b97;
-  margin: 0;  
-  height: 3em;
-  justify-content: space-around;
-}
-
-.imagem{
-  box-shadow: 2px 2px 15px 0 rgba(1, 23, 61, 0.078);
-  border-radius: 8px 0 0 8px;
-}
 
 .tituloItem{
   margin: 0;
@@ -245,7 +256,7 @@ span{
   color: #146b97; 
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .modalCarrinho {
     width: 35%;
     top: 2vw;

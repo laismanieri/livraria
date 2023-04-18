@@ -1,8 +1,11 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Contact from "./components/pages/Contact";
-import Cadastro from "./components/pages/Cadastro";
+import Home from './pages/Home';
+import ResultadosPesquisa from "./pages/ResultadosPesquisa";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import Contact from "./pages/Contact"
+import InformacaoLivro from "./pages/InformacaoLivro";
+
 
 function App() {
   return (
@@ -11,11 +14,13 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" exact></Route>
           <Route element={<Login />} path="/login" />
-          <Route element={<Contact />} path="/contact" />
-          {/* <Route element = {<Livro/>} path='/livro'/> */}
           <Route element={<Cadastro />} path="/cadastro" />
+          <Route element={<ResultadosPesquisa />} path="/resultados-pesquisa"></Route>
+          <Route element={<Contact />} path="/contact" />
+          <Route element={<InformacaoLivro />} path="/informacao-livro/:idLivro" />
+
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter>  
     </div>
   );
 }

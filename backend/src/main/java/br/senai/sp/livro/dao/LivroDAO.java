@@ -16,7 +16,7 @@ public class LivroDAO {
 	JdbcTemplate jdbcTemplate;
 
 	public List<Livro> listarTodos() {
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+		String sql = "SELECT IDLIVRO, ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
 				+ "FROM LIVRO";
 		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
 		return lista;
@@ -24,7 +24,7 @@ public class LivroDAO {
 
 	public Livro PegarPorId(int idLivro) {
 
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
+		String sql = "SELECT IDLIVRO, ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
 				+ "FROM LIVRO "
 				+ "WHERE IDLIVRO = ?";
 		Object[] params = { idLivro };
@@ -35,21 +35,21 @@ public class LivroDAO {
 	
 	
 	public List<Livro> listarOferta() {
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
-				+ "FROM LIVRO"
-				+ "WHERE OFERTA = 1";
-		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
-		return lista;
+	    String sql = "SELECT IDLIVRO, ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA "
+	            + "FROM LIVRO "
+	            + "WHERE OFERTA = 1";
+	    List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
+	    return lista;
 	}
-	
+
 	public List<Livro> listarDestaque() {
-		String sql = "SELECT ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA  "
-				+ "FROM LIVRO"
-				+ "WHERE destaque = 1";
-		List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
-		return lista;
-	}	
-	
+	    String sql = "SELECT IDLIVRO, ANODEPUBLICACAO, PRECO, NOME, AUTOR, GENERO, EDITORA, QTDESTOQUE, DESCRICAO, IMAGEM, QTDPAGINA, OFERTA, DESTAQUE, PRECOOFERTA "
+	            + "FROM LIVRO "
+	            + "WHERE DESTAQUE = 1";
+	    List<Livro> lista = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Livro.class));
+	    return lista;
+	}
+
 	public Livro[] buscarPorValor(String valor) {
 	    String sql = "SELECT ANODEPUBLICACAO, NOME, AUTOR, GENERO, EDITORA "
 	            + "FROM LIVRO "

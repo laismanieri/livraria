@@ -1,18 +1,20 @@
-.footer {
-    color: #ffffff;
-    padding: 0;
-    text-align: center;
-    margin-top: 100px;
-    width: 100%;
-    /* position: relative;
-    z-index: 99999; */
+
+.containerFooter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10vh 15vh;
+  background: #033579;
+  justify-content: space-around;
+  margin-top: 100px;
+
 }
 
-.socialListFooterDiv{
-    padding: 1em;
-    margin: 0;
-    background: #033579;
+.containerFooter > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
+
 
 
 .socialListFooter{
@@ -20,6 +22,7 @@
     list-style-type: none;
     text-decoration: none;
     justify-content: space-around;
+    color: #ffffff;
 
 }
 
@@ -32,13 +35,9 @@
     cursor: pointer;
     padding: 0;
     margin: 0;
-    margin-bottom: 10px;
+
 }
 
-
-.footerLogo{
-    width: 4%;
-}
 
 .socialListLi:hover{
     color:rgb(144, 202, 252);
@@ -47,7 +46,8 @@
 
 .socialListLi{
     margin: 2% 15% 2% 15%;
-    font-size: 1.5em;   
+    font-size: 1em;  
+    background: #03347997; 
 }
 
 
@@ -56,8 +56,6 @@
     font-weight: bold;
     color: #ffffff;
     text-align: center;
-    margin-top: 20px;
-
 }
 
 .footerFaleConosco:hover{
@@ -68,16 +66,18 @@
 a:link {text-decoration: none;}
 
 .footerPagamento{
-
+    margin: 0;
     background: #03347997;
-    padding: 1em;
 }
 
-.footerPagamentoH1{
-    font-size: 1em;
+
+.footerFaleConoscoDiv{
+    margin-top: 0.5em;
+
+}
+.footerPagamentoH1, .footerFaleConosco{
+    font-size: 0.7em;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
     color: #ffffff;
 }
 
@@ -97,7 +97,7 @@ a:link {text-decoration: none;}
 }
 
 
-.footerCopy{
+.footerCopyRight{
 
     /* background: #03347948; */
     padding: 1em;
@@ -108,6 +108,23 @@ a:link {text-decoration: none;}
     color: #033579;
     font-size: large;
     color: #ffffffc4 ;
-    margin: 0;    
-    margin-bottom: 20px;
+    margin: 0;   
+    padding: 20px; 
+    text-align: center;
 }
+
+@media only screen and (max-width: 768px) {
+
+
+  
+  }
+
+
+
+  @media only screen and (max-width: 1440px) {
+    .containerFooter {
+        grid-template-rows: 10vh 20vh; 
+      }
+
+ 
+  }

@@ -8,7 +8,8 @@ export default function Carrossel() {
     <div style={
         { 
         display: 'block', 
-        width: '1200px', 
+        width: '400px', 
+        height: '200px',
         padding: 30, 
         // color: '#015a80',   
         fontFamily: 'Open Sans', 

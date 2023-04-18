@@ -1,5 +1,5 @@
 import styles from "../modals/ModalCarrinho.module.css";
-import { AiFillDelete, AiOutlineClose, } from "react-icons/ai";
+import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 
 function ModalCarrinho({
@@ -31,11 +31,18 @@ function ModalCarrinho({
   return (
     <>
       {isOpen && (
-        <div>
-          <div className={styles.modalBackground}></div>
+        <div className={styles.modalCarrinhoContainer}>
+          <div className={styles.modalBackground} />
           <div className={styles.modalCarrinho}>
             <div className={styles.navBarCarrinho}>
               <ul className={styles.navBarCarrinhoUl}>
+                <li>
+                  <img
+                    src="/img/cesta-compras.png"
+                    alt="cesta"
+                    className={styles.navbarCesta}
+                  />
+                </li>
                 <li className={styles.navBarCarrinhoLi}>
                   <h1 className={styles.sacolaH1}>Minha Sacola</h1>
                 </li>
@@ -52,52 +59,58 @@ function ModalCarrinho({
             <div className={styles.listaItemCarrinho}>
               <div className={styles.containerLista}>
                 <div className={styles.gridListaImg}>
-                  <img className={styles.imagem} src={imagem} alt={nome} />
+                  <div className={styles.divImg}>
+                    <img
+                      className={styles.imagemGrid}
+                      src={imagem}
+                      alt={nome}
+                    />
+                  </div>
                 </div>
-                <div className={styles.gridListaInfo}>
-                  <div className={styles.comprarLivros}>
-                    <div className={styles.divComprarLivros}>
-                      <div className={styles.divNomeExcluir}>
-                        <h1 className={styles.tituloItem}>{nome}</h1>
+                <div className={styles.containerListaInfo}>
+                  <div className={styles.gridListaInfo}>
+                      <div className={styles.divComprarLivros}>
+                        <div className={styles.divNomeExcluir}>
+                          <h1 className={styles.tituloItem}>{nome}</h1>
                           <button className={styles.imgExcluirItemCarrinho}>
-                          <AiFillDelete />
-                        </button>
-                      </div>
-                      <div className={styles.compra}>
-                        <div className={styles.divPreco}>
-                          <h1
-                            className={`${styles.precoRegular} ${
-                              precoOferta ? styles.hasOffer : styles.noOffer
-                            }`}
-                          >
-                            <span>R$</span> {preco.toFixed(2)}
-                          </h1>
+                            <AiFillDelete />
+                          </button>
                         </div>
-                        {precoOferta && (
+                        <div className={styles.containerCompra}>
                           <div className={styles.divPreco}>
-                            <h1 className={styles.noOffer}>
-                              <span>R$</span> {precoOferta.toFixed(2)}
+                            <h1
+                              className={`${styles.precoRegular} ${
+                                precoOferta ? styles.hasOffer : styles.noOffer
+                              }`}
+                            >
+                              <span>R$</span> {preco.toFixed(2)}
                             </h1>
                           </div>
-                        )}
-                      </div>
-                      <div className={styles.qtde}>
-                        <button
-                          onClick={handleDecrementQuantidadeCarrinho}
-                          className={styles.buttonQtde}
-                        >
-                          -
-                        </button>
-                        <span className={styles.spanQtde}>
-                          {quantidadeCarrinho}
-                        </span>
-                        <button
-                          onClick={handleIncrementQuantidadeCarrinho}
-                          className={styles.buttonQtde}
-                        >
-                          +
-                        </button>
-                      </div>
+                          {precoOferta && (
+                            <div className={styles.divPreco}>
+                              <h1 className={styles.noOffer}>
+                                <span>R$</span> {precoOferta.toFixed(2)}
+                              </h1>
+                            </div>
+                          )}
+                        </div>
+                        <div className={styles.qtde}>
+                          <button
+                            onClick={handleDecrementQuantidadeCarrinho}
+                            className={styles.buttonQtde}
+                          >
+                            -
+                          </button>
+                          <span className={styles.spanQtde}>
+                            {quantidadeCarrinho}
+                          </span>
+                          <button
+                            onClick={handleIncrementQuantidadeCarrinho}
+                            className={styles.buttonQtde}
+                          >
+                            +
+                          </button>
+                        </div>
                     </div>
                   </div>
                 </div>
