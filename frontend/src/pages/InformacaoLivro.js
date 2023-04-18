@@ -7,13 +7,14 @@ import Container from "../components/layout/Container";
 import Navbar from "../components/layout/NavBar";
 import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
-import ModalCarrinho from '../components/modals/ModalCarrinho';
+import ModalCarrinho from "../components/modals/ModalCarrinho";
 
-function InformacaoLivro(props) {
+function InformacaoLivro() {
   const { idLivro } = useParams();
   const [livro, setLivro] = useState(null);
   const [modalCarrinhoOpen, setModalCarrinhoOpen] = useState(false);
   const [quantidade, setQuantidade] = useState(1);
+  const [cartItems, setCartItems] = useState(0);
 
   useEffect(() => {
     axios
@@ -32,23 +33,32 @@ function InformacaoLivro(props) {
 
   const handleOpenModalCarrinho = () => {
     setModalCarrinhoOpen(true);
-};
+  };
 
-const handleCloseModalCarrinho = () => {
+  const handleCloseModalCarrinho = () => {
     setModalCarrinhoOpen(false);
-};
+  };
 
-const handleIncrementQuantidade = () => {
+  const handleIncrementQuantidade = () => {
     setQuantidade(quantidade + 1);
-};
+  };
 
-const handleDecrementQuantidade = () => {
+  const handleDecrementQuantidade = () => {
     if (quantidade > 1) {
-        setQuantidade(quantidade - 1);
+      setQuantidade(quantidade - 1);
     }
-};
+  };
 
   
+
+  const handleAddToCart = () => {
+    setCartItems(cartItems + quantidade);
+    setModalCarrinhoOpen(true);
+
+  };
+
+
+
 
   return (
     <>
@@ -71,10 +81,12 @@ const handleDecrementQuantidade = () => {
               />
             </div>
             <div className={styles.gridItemLong}>
-              <h1 className={styles.titulo}>{livro.nome}</h1>
-              <p className={styles.autor}>{livro.autor}</p>
-              <p className={styles.editora}>{livro.editora}</p>
-              <p className={styles.descricao}>{livro.descricao}</p>
+              <div className={styles.containerInfoLivro}>
+                <h1 className={styles.titulo}>{livro.nome}</h1>
+                <p className={styles.autor}>{livro.autor}</p>
+                <p className={styles.editora}>{livro.editora}</p>
+                <p className={styles.descricao}>{livro.descricao}</p>
+              </div>
             </div>
             <div className={styles.comprarLivros}>
               <div className={styles.divComprarLivros}>
@@ -91,7 +103,7 @@ const handleDecrementQuantidade = () => {
                     >
                       -
                     </button>
-                    <span className={styles.spanQtde}>{livro.quantidade}</span>
+                    <span className={styles.spanQtde}>{quantidade}</span>
                     <button
                       onClick={handleIncrementQuantidade}
                       className={styles.buttonQtde}
@@ -101,8 +113,11 @@ const handleDecrementQuantidade = () => {
                   </div>
                 </div>
                 <div>
-                  <button className={styles.buttonCompra} onClick={setModalCarrinhoOpen}>
-                    <h1 className={styles.h1AdicionarSacola}>
+                  <button
+                    className={styles.buttonCompra}
+                    onClick={handleAddToCart}
+                  >
+                    <h1 className={styles.h1AdicionarSacola} >
                       Adicionar à sacola
                     </h1>
                   </button>
@@ -159,16 +174,26 @@ const handleDecrementQuantidade = () => {
                   </span>
                 </li>
               </ul>
+              <ul className={styles.ficha1}>
+                <li className={styles.fichaInfo}>
+                  <span className={styles.fichaTh}>Quantidade de Páginas:</span>
+                </li>
+                <li>
+                  <span className={styles.fichaTr}>
+                    {livro.qtdPagina}
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
       </Container>
 
       <Footer />
       <ModalCarrinho
-        isOpen={modalCarrinhoOpen}
-        onClose={() => setModalCarrinhoOpen(false)}
+  isOpen={modalCarrinhoOpen}
+  onClose={handleCloseModalCarrinho}
+  quantidade={quantidade}
         imagem={livro.imagem}
         nome={livro.nome}
         preco={livro.preco}

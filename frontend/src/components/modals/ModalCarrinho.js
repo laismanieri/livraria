@@ -8,23 +8,21 @@ function ModalCarrinho({
   imagem,
   nome,
   preco,
-  autor,
-  descricao,
-  editora,
-  genero,
-  anoDePublicacao,
   precoOferta,
   quantidade,
 }) {
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(quantidade);
+  const [subtotal, setSubtotal] = useState(preco);
 
   const handleIncrementQuantidadeCarrinho = () => {
     setQuantidadeCarrinho(quantidadeCarrinho + 1);
+    setSubtotal((quantidadeCarrinho + 1) * preco);
   };
 
   const handleDecrementQuantidadeCarrinho = () => {
     if (quantidadeCarrinho > 1) {
       setQuantidadeCarrinho(quantidadeCarrinho - 1);
+      setSubtotal((quantidadeCarrinho - 1) * preco);
     }
   };
 
@@ -69,48 +67,48 @@ function ModalCarrinho({
                 </div>
                 <div className={styles.containerListaInfo}>
                   <div className={styles.gridListaInfo}>
-                      <div className={styles.divComprarLivros}>
-                        <div className={styles.divNomeExcluir}>
-                          <h1 className={styles.tituloItem}>{nome}</h1>
-                          <button className={styles.imgExcluirItemCarrinho}>
-                            <AiFillDelete />
-                          </button>
+                    <div className={styles.divComprarLivros}>
+                      <div className={styles.divNomeExcluir}>
+                        <h1 className={styles.tituloItem}>{nome}</h1>
+                        <button className={styles.imgExcluirItemCarrinho}>
+                          <AiFillDelete />
+                        </button>
+                      </div>
+                      <div className={styles.containerCompra}>
+                        <div className={styles.divPreco}>
+                          <h1
+                            className={`${styles.precoRegular} ${
+                              precoOferta ? styles.hasOffer : styles.noOffer
+                            }`}
+                          >
+                            <span>R$</span> {preco.toFixed(2)}
+                          </h1>
                         </div>
-                        <div className={styles.containerCompra}>
+                        {precoOferta && (
                           <div className={styles.divPreco}>
-                            <h1
-                              className={`${styles.precoRegular} ${
-                                precoOferta ? styles.hasOffer : styles.noOffer
-                              }`}
-                            >
-                              <span>R$</span> {preco.toFixed(2)}
+                            <h1 className={styles.noOffer}>
+                              <span>R$</span> {precoOferta.toFixed(2)}
                             </h1>
                           </div>
-                          {precoOferta && (
-                            <div className={styles.divPreco}>
-                              <h1 className={styles.noOffer}>
-                                <span>R$</span> {precoOferta.toFixed(2)}
-                              </h1>
-                            </div>
-                          )}
-                        </div>
-                        <div className={styles.qtde}>
-                          <button
-                            onClick={handleDecrementQuantidadeCarrinho}
-                            className={styles.buttonQtde}
-                          >
-                            -
-                          </button>
-                          <span className={styles.spanQtde}>
-                            {quantidadeCarrinho}
-                          </span>
-                          <button
-                            onClick={handleIncrementQuantidadeCarrinho}
-                            className={styles.buttonQtde}
-                          >
-                            +
-                          </button>
-                        </div>
+                        )}
+                      </div>
+                      <div className={styles.qtde}>
+                        <button
+                          onClick={handleDecrementQuantidadeCarrinho}
+                          className={styles.buttonQtde}
+                        >
+                          -
+                        </button>
+                        <span className={styles.spanQtde}>
+                          {quantidadeCarrinho}
+                        </span>
+                        <button
+                          onClick={handleIncrementQuantidadeCarrinho}
+                          className={styles.buttonQtde}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -124,7 +122,12 @@ function ModalCarrinho({
                     <span>Subtotal:</span>
                   </li>
                   <li>
-                    <span>Subtotal</span>
+                    <span>
+                      {subtotal.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
+                    </span>
                   </li>
                 </ul>
                 <ul className={styles.valorTotal}>
