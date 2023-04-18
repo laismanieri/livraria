@@ -23,10 +23,7 @@ function ResultadosPesquisa() {
                 Voltar
               </h1>
             </Link>
-<<<<<<< HEAD
             <div className={styles.linhaHorizontal}/>
-=======
->>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
             <h2 className={styles.resultadoBusca}>
               Exibindo resultados para: {location.state.term}{" "}
             </h2>
@@ -34,17 +31,11 @@ function ResultadosPesquisa() {
             <h3 className={styles.resultadoCount}>
               {results.length} livros encontrados
             </h3>
-<<<<<<< HEAD
 
           </section>
 
           {/* <div className={styles.linhaHorizontal}/> */}
 
-=======
-            <div className={styles.linhaHorizontal}/>
-          </section>
-
->>>>>>> c4089d587ffdfbf32c146d7a7c335bd439cd0b22
           {location.state.results.map((livro) => (
           <Card key={livro.idLivro} livro={livro} />
         ))}
