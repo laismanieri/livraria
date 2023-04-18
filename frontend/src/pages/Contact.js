@@ -1,27 +1,24 @@
 import React from "react";
 import styles from "./Contact.module.css";
-import Footer from "../layout/Footer";
-import Usuario from "../layout/Usuario";
+import Footer from "../components/layout/Footer";
+import Navbar from "../components/layout/NavBar";
 import { Link } from "react-router-dom";
-import Container from "../layout/Container";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import Container from "../components/layout/Container";
 
 function Contact() {
   return (
     <>
-      <nav className={styles.navbar}>
-        <Container>
-          <Link to="/">
-            <img src="./img/logo.png" alt="logo" />
-          </Link>
-          <Link to="/">
-            <h1 className={styles.listH1}>Home</h1>
-          </Link>
-          <ul className={styles.list}>
-            <Usuario />
-          </ul>
-        </Container>
-      </nav>
+      <Navbar />
+      <Container>
+      <Link to={"/"}>
+        <h1 className={styles.voltarHome}>
+          <AiOutlineArrowLeft />
+          Voltar
+        </h1>
+      </Link>
 
+      <div className={styles.linhaHorizontal}/>
       <form className={styles.formContact}>
         <label className={styles.formContactLabel} htmlFor="name">
           Nome:
@@ -74,6 +71,7 @@ function Contact() {
           Enviar
         </button>
       </form>
+      </Container>
       <Footer />
     </>
   );

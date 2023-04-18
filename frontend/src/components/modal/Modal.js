@@ -1,4 +1,4 @@
-import styles from '../modals/Modal.module.css';
+import styles from '../modal/Modal.module.css';
 import { useState } from 'react';
 import ModalCarrinho from './ModalCarrinho';
 import { AiOutlineArrowLeft } from "react-icons/ai";
