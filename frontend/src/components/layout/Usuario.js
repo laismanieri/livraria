@@ -1,12 +1,13 @@
 import styles from '../pages/Home.module.css'
 import {Link} from 'react-router-dom'
+import { FaUser } from "react-icons/fa";
 
 function Usuario (){
 
     return (
         <div className={styles.loginUser}>
                         <div className={styles.divImgUser} >
-                            <img className={styles.imgUser} title="Login" src="./img/perfil-de-usuario.png" alt="ícone de usuario"/>
+                            <FaUser/>
                         </div>
                               
                      <div className={styles.login}>

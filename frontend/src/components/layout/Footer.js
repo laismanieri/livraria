@@ -14,7 +14,7 @@ function Footer() {
         <div className={styles.footerLogo}>
           <img
             className={styles.footerLogoImg}
-            src="./img/logo.png"
+            src="/img/logo.png"
             alt="logo"
           />
         </div>
