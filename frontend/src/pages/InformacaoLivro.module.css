@@ -128,7 +128,14 @@
     width: 30px;
     text-align: center;
     border-radius: 5px;
+    color: #146b97;
+  }
 
+  .buttonQtde:hover{
+    cursor: pointer;
+    background-color: #d2d2d2d8;
+    text-decoration: none;
+    color: rgb(255, 255, 255)
   }
 
   .spanQtde {
@@ -154,7 +161,8 @@
     text-align: center;  
     background: #033579;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 10px;   
+    cursor: pointer;
   }
 
   .h1AdicionarSacola{
@@ -167,9 +175,10 @@
 
   .buttonAdicionarSacola:hover, 
   .buttonCompra:hover{
-    cursor: pointer;
-    background: #3c67a4;
+ 
+    background: #033479cd;
     text-decoration: none;
+    color: white;
   }
 
 

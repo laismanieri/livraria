@@ -111,16 +111,16 @@ function ModalCarrinho({
 
                       <div className={styles.qtde}>
                         <button
-                          onClick={handleDecrementQuantidadeCarrinho}
+                          onClick={()=>handleDecrementQuantidadeCarrinho(quantidade-1)}
                           className={styles.buttonQtde}
                         >
                           -
                         </button>
                         <span className={styles.spanQtde}>
-                          {quantidadeCarrinho}
+                          {quantidade}
                         </span>
                         <button
-                          onClick={handleIncrementQuantidadeCarrinho}
+                          onClick={()=>handleIncrementQuantidadeCarrinho(quantidade+1)}
                           className={styles.buttonQtde}
                         >
                           +

@@ -79,7 +79,7 @@
 
 .listaItemCarrinho{
   width: 100%;
-  height:73%;
+  height:70%;
 
 }
 
@@ -131,6 +131,8 @@
 
 }
 
+
+
 .divNomeExcluir {
   display: flex;
   justify-content: center;
@@ -144,7 +146,7 @@
 .totalCarrinho{
   background:  #033579;
   width: 100%;
-  height:20%;
+  height:23%;
   justify-content: center;
 }
 
@@ -153,50 +155,33 @@
   padding: 1.5em;
 }
 
+/* .divCartButtonCompra{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+} */
 
 .carrinhoButtonComprar{
   width: 100%;
-  height: 2em;
+  height: 2.3em;
   text-align: center;  
-  border-radius: 5px;
+  border-radius: 7px;
   text-decoration: none;
   border: none;
   color: #146b97;  
+  align-items: center;
+  font-size: 15px;
+  margin-top: 12px;  
+  background: rgb(192, 225, 255);
 }
-
-
 
 .carrinhoButtonComprar:hover{
   cursor: pointer;
-  background: rgb(192, 225, 255);
+  background: aliceblue;
   text-decoration: none;
-  color: rgb(255, 255, 255)
+  color: #146b97bc;  
 }
-
-
-.valorSubtotal, .valorTotal{
-  display: flex;
-  justify-content: space-between;
-  padding: 7px;
-  flex-wrap: nowrap;
-  font-size: 18px;
-  color: rgb(192, 225, 255);
-  border-radius: 10px;
-  margin-bottom: 0;
-  list-style-type: none;
-}
-
-.valorTotal{
-  font-size: 20px;
-  font-weight: bold;
-}
-
-
-span{
-  margin: 15px;
-
-}
-
 
 
 .tituloItem{
@@ -216,13 +201,10 @@ span{
 
 }
 
-
-
-.carrinhoButtonComprar:hover{
+.imgExcluirItemCarrinho:hover{
   cursor: pointer;
-  background: rgb(192, 225, 255);
   text-decoration: none;
-  color: rgb(255, 255, 255)
+  color: #146b97b9; 
 }
 
 .precoAntigo{
@@ -256,6 +238,14 @@ span{
   text-align: center;
   border-radius: 5px;
   background-color: #d2d2d27d;
+  color: #146b97; 
+}
+
+.buttonQtde:hover{
+  cursor: pointer;
+  background-color: #d2d2d2d8;
+  text-decoration: none;
+  color: rgb(255, 255, 255)
 }
 
 .spanQtde {
@@ -264,6 +254,35 @@ span{
   background-color: #dad9d9;
   border-radius: 5px; 
   color: #146b97; 
+}
+
+
+.valorSubtotal, .valorTotal{
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  color: rgb(192, 225, 255);
+  border-radius: 10px;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.valorSubtotal, .valorTotal{
+  color: white;
+
+}
+
+.valorTotal{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+span{
+  margin: 15px;
+
 }
 
 @media (max-width: 768px) {
