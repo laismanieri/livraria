@@ -4,6 +4,14 @@
   box-sizing: none;
 }
 
+/* .linhaHorizontal {
+  width: 100%;
+  border: 0.05px outset rgba(144, 202, 252, 0.26);
+  margin-top: 2em;
+  margin-bottom: 1em;
+} */
+
+
 .modalBackground {
   position: fixed;
   top: 0;
@@ -217,26 +225,28 @@ span{
   color: rgb(255, 255, 255)
 }
 
-/* .precoRegular{
-
-} */
-.hasOffer {
-  color: rgba(236, 34, 34, 0.788);
+.precoAntigo{
   text-decoration: line-through;
+  color: brown;
+  text-align: left;
   margin: 0;
-  font-size: 18px;
+  height: 1.5em;
+
 }
 
-.noOffer {
+.precoOferta, .precoRegular{
   color: #146b97; 
   margin: 0;
-  font-size: 18px;
 }
 
-.preco, .precoOferta{
+
+
+.spanRegular{
   color: #146b97; 
   margin: 0;
-
+  font-size: 14px;
+  background: whitesmoke;
+  height: 1.5em;
 }
 
 

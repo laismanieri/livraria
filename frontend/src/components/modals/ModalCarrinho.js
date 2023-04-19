@@ -13,10 +13,17 @@ function ModalCarrinho({
 }) {
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(quantidade);
   const [subtotal, setSubtotal] = useState(preco);
+  const [total, setTotal] = useState(precoOferta);
+  const isPrecoRegular = preco !== precoOferta;
 
   const handleIncrementQuantidadeCarrinho = () => {
     setQuantidadeCarrinho(quantidadeCarrinho + 1);
     setSubtotal((quantidadeCarrinho + 1) * preco);
+    if (precoOferta) {
+      setTotal((quantidadeCarrinho + 1) * precoOferta);
+    } else {
+      setTotal((quantidadeCarrinho + 1) * preco);
+    }
   };
 
   const handleDecrementQuantidadeCarrinho = () => {
@@ -74,24 +81,34 @@ function ModalCarrinho({
                           <AiFillDelete />
                         </button>
                       </div>
-                      <div className={styles.containerCompra}>
-                        <div className={styles.divPreco}>
-                          <h1
-                            className={`${styles.precoRegular} ${
-                              precoOferta ? styles.hasOffer : styles.noOffer
-                            }`}
-                          >
-                            <span>R$</span> {preco.toFixed(2)}
-                          </h1>
-                        </div>
-                        {precoOferta && (
-                          <div className={styles.divPreco}>
-                            <h1 className={styles.noOffer}>
-                              <span>R$</span> {precoOferta.toFixed(2)}
+                      <div className={styles.divPreco}>
+                        {isPrecoRegular ? (
+                          <div className={styles.cardOferta}>
+                            <h1 className={styles.precoAntigo}>
+                              {preco.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                              })}
                             </h1>
+                            <h2 className={styles.precoOferta}>
+                              {precoOferta.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                              })}
+                            </h2>
+                          </div>
+                        ) : (
+                          <div className={styles.cardRegular}>
+                            <h2 className={styles.precoRegular}>
+                              {preco.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                              })}
+                            </h2>
                           </div>
                         )}
                       </div>
+
                       <div className={styles.qtde}>
                         <button
                           onClick={handleDecrementQuantidadeCarrinho}
@@ -114,6 +131,7 @@ function ModalCarrinho({
                 </div>
               </div>
             </div>
+            {/* <div className={styles.linhaHorizontal} /> */}
 
             <div className={styles.totalCarrinho}>
               <div className={styles.valorCarrinho}>
@@ -135,7 +153,12 @@ function ModalCarrinho({
                     <span>Total:</span>
                   </li>
                   <li>
-                    <span>Total</span>
+                    <span>
+                      {total.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
+                    </span>
                   </li>
                 </ul>
                 <button className={styles.carrinhoButtonComprar}>

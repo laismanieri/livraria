@@ -16,6 +16,7 @@ function InformacaoLivro() {
   const [quantidade, setQuantidade] = useState(1);
   const [cartItems, setCartItems] = useState(0);
 
+
   useEffect(() => {
     axios
       .get(`http://localhost:8082/livro/${idLivro}`)
@@ -57,7 +58,7 @@ function InformacaoLivro() {
 
   };
 
-
+  const isPrecoRegular = livro.preco !== livro.precoOferta;
 
 
   return (
@@ -92,9 +93,35 @@ function InformacaoLivro() {
               <div className={styles.divComprarLivros}>
                 <div className={styles.compra}>
                   <div className={styles.preco}>
-                    <h1 className={styles.preco}>
-                      R$ {livro.preco.toFixed(2)}
-                    </h1>
+                  <div className={styles.divPreco}>
+          {isPrecoRegular ? (
+            <div className={styles.cardOferta}>
+              <h1 className={styles.precoAntigo}>
+                {livro.preco.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </h1>
+              <h2 className={styles.precoOferta}>
+                {livro.precoOferta.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </h2>
+            </div>
+          ) : (
+            <div className={styles.cardRegular}>
+
+              <h2 className={styles.precoRegular}>
+                {livro.preco.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </h2>
+            </div>
+          )}
+        </div>
+                    
                   </div>
                   <div className={styles.qtde}>
                     <button
@@ -121,9 +148,10 @@ function InformacaoLivro() {
                       Adicionar à sacola
                     </h1>
                   </button>
+                  <Link to={"/pagamento"}>
                   <button className={styles.buttonAdicionarSacola}>
                     <h1 className={styles.h1AdicionarSacola}>Comprar</h1>
-                  </button>
+                  </button></Link>
                 </div>
               </div>
             </div>
@@ -202,6 +230,8 @@ function InformacaoLivro() {
         anoDePublicacao={livro.anoDePublicacao}
         editora={livro.editora}
         genero={livro.genero}
+        precoOferta={livro.precoOferta}
+        isPrecoRegular={isPrecoRegular}
       />
     </>
   );

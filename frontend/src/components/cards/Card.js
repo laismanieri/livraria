@@ -3,20 +3,22 @@ import styles from "../cards/Card.module.css";
 import { Link } from "react-router-dom";
 
 function Card({ livro }) {
-
   const isPrecoRegular = livro.preco !== livro.precoOferta;
-
 
   return (
     <div className={styles.containerCard}>
       <div className={styles.card}>
         <div className={styles.containerCardImage}>
-        <Link to={{ pathname: `/informacao-livro/${livro.idLivro}`, state: { idLivro: livro.idLivro } }}>
+          <Link
+            to={{
+              pathname: `/informacao-livro/${livro.idLivro}`,
+              state: { idLivro: livro.idLivro },
+            }}
+          >
             <img
-              src={livro.imagem}  
+              src={livro.imagem}
               alt={livro.titulo}
               className={styles.cardImageLivro}
-
             />
           </Link>
         </div>
@@ -24,16 +26,13 @@ function Card({ livro }) {
           <h2>{livro.nome}</h2>
         </div>
         <div className={styles.divPreco}>
-
-        {isPrecoRegular ? (
+          {isPrecoRegular ? (
             <div className={styles.cardOferta}>
-                 <h1 className={styles.precoAntigo}>
-
-                  {livro.preco.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-
+              <h1 className={styles.precoAntigo}>
+                {livro.preco.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
               </h1>
               <h2 className={styles.precoOferta}>
                 {livro.precoOferta.toLocaleString("pt-BR", {
@@ -41,21 +40,18 @@ function Card({ livro }) {
                   currency: "BRL",
                 })}
               </h2>
-
             </div>
           ) : (
             <div className={styles.cardRegular}>
-              <h1 className={styles.spanRegular}/>
+              <h1 className={styles.spanRegular} />
               <h2 className={styles.precoRegular}>
                 {livro.preco.toLocaleString("pt-BR", {
                   style: "currency",
                   currency: "BRL",
                 })}
               </h2>
-
             </div>
           )}
-
         </div>
       </div>
     </div>

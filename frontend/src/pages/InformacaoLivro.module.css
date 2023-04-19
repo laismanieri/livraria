@@ -93,7 +93,22 @@
     align-items: center;
   }
 
-  .preco,
+
+  .precoAntigo{
+    text-decoration: line-through;
+    color: brown;
+    text-align: left;
+    margin: 0;
+    height: 2em;
+    font-size: 20px;
+  }
+  
+  .precoOferta, .precoRegular{
+    color: #146b97; 
+    margin: 0;
+  }
+    
+ 
   .qtde {
     flex: 1;
     display: flex;
