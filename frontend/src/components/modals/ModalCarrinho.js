@@ -1,15 +1,14 @@
 import styles from "../modals/ModalCarrinho.module.css";
 import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function ModalCarrinho({
-  isOpen,
+function ModalCarrinho({ isOpen,
   onClose,
   imagem,
   nome,
   preco,
   precoOferta,
-  quantidade,
+  quantidade
 }) {
   const [quantidadeCarrinho, setQuantidadeCarrinho] = useState(quantidade);
   const [subtotal, setSubtotal] = useState(preco);
@@ -30,6 +29,11 @@ function ModalCarrinho({
     if (quantidadeCarrinho > 1) {
       setQuantidadeCarrinho(quantidadeCarrinho - 1);
       setSubtotal((quantidadeCarrinho - 1) * preco);
+      if (precoOferta) {
+        setTotal((quantidadeCarrinho - 1) * precoOferta);
+      } else {
+        setTotal((quantidadeCarrinho - 1) * preco);
+      }
     }
   };
 
@@ -111,16 +115,16 @@ function ModalCarrinho({
 
                       <div className={styles.qtde}>
                         <button
-                          onClick={()=>handleDecrementQuantidadeCarrinho(quantidade-1)}
+                          onClick={() => handleDecrementQuantidadeCarrinho(quantidade - 1)}
                           className={styles.buttonQtde}
                         >
                           -
                         </button>
                         <span className={styles.spanQtde}>
-                          {quantidade}
+                          {quantidadeCarrinho + (quantidade - 1)}
                         </span>
                         <button
-                          onClick={()=>handleIncrementQuantidadeCarrinho(quantidade+1)}
+                          onClick={() => handleIncrementQuantidadeCarrinho(quantidade + 1)}
                           className={styles.buttonQtde}
                         >
                           +
