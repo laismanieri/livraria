@@ -23,7 +23,7 @@ function Card({ livro }) {
           </Link>
         </div>
         <div className={styles.cardTitulo}>
-          <h2 className={styles.h2TituloCard}>{livro.nome}</h2>
+          <h2 className={styles.h2TituloCard}>{livro.titulo}</h2>
         </div>
         <div className={styles.divPreco}>
           {isPrecoRegular ? (

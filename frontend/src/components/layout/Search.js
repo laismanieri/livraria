@@ -15,7 +15,7 @@ function Search() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const queryParams = {
-      nome: searchTerm,
+      titulo: searchTerm,
       editora: searchTerm,
       autor: searchTerm,
       anoDePublicacao: searchTerm,

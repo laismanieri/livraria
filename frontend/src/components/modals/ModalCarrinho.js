@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function ModalCarrinho({ isOpen,
   onClose,
   imagem,
-  nome,
+  titulo,
   preco,
   precoOferta,
   quantidade
@@ -72,15 +72,15 @@ function ModalCarrinho({ isOpen,
                     <img
                       className={styles.imagemGrid}
                       src={imagem}
-                      alt={nome}
+                      alt={titulo}
                     />
                   </div>
                 </div>
                 <div className={styles.containerListaInfo}>
                   <div className={styles.gridListaInfo}>
                     <div className={styles.divComprarLivros}>
-                      <div className={styles.divNomeExcluir}>
-                        <h1 className={styles.tituloItem}>{nome}</h1>
+                      <div className={styles.divtituloExcluir}>
+                        <h1 className={styles.tituloItem}>{titulo}</h1>
                         <button className={styles.imgExcluirItemCarrinho}>
                           <AiFillDelete />
                         </button>

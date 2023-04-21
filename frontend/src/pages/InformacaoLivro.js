@@ -78,15 +78,15 @@ function InformacaoLivro() {
               <img
                 className={styles.imagemLivro}
                 src={livro.imagem}
-                alt={livro.nome}
+                alt={livro.titulo}
               />
             </div>
             <div className={styles.gridItemLong}>
               <div className={styles.containerInfoLivro}>
-                <h1 className={styles.titulo}>{livro.nome}</h1>
+                <h1 className={styles.titulo}>{livro.titulo}</h1>
                 <p className={styles.autor}>{livro.autor}</p>
                 <p className={styles.editora}>{livro.editora}</p>
-                <p className={styles.descricao}>{livro.descricao}</p>
+                <p className={styles.sinopse}>{livro.sinopse}</p>
               </div>
             </div>
             <div className={styles.comprarLivros}>
@@ -165,7 +165,7 @@ function InformacaoLivro() {
                   <span className={styles.fichaTh}>Titulo:</span>
                 </li>
                 <li>
-                  <span className={styles.fichaTr}>{livro.nome}</span>
+                  <span className={styles.fichaTr}>{livro.titulo}</span>
                 </li>
               </ul>
               <ul className={styles.ficha1}>
@@ -223,10 +223,10 @@ function InformacaoLivro() {
         onClose={handleCloseModalCarrinho}
         quantidade={quantidade}
         imagem={livro.imagem}
-        nome={livro.nome}
+        titulo={livro.titulo}
         preco={livro.preco}
         autor={livro.autor}
-        descricao={livro.descricao}
+        sinopse={livro.sinopse}
         anoDePublicacao={livro.anoDePublicacao}
         editora={livro.editora}
         genero={livro.genero}
